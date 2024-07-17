@@ -69,8 +69,7 @@ export default defineManifestConfig({
       urlCheck: false,
     },
     usingComponents: true,
-    darkmode: true,
-    themeLocation: 'theme.json',
+    // __usePrivacyCheck__: true,
   },
   'mp-alipay': {
     usingComponents: true,
@@ -82,8 +81,6 @@ export default defineManifestConfig({
     usingComponents: true,
   },
   h5: {
-    darkmode: true,
-    themeLocation: 'theme.json',
     router: {
       base: VITE_APP_PUBLIC_BASE,
     },
