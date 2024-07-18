@@ -59,6 +59,12 @@ importers:
       pinia-plugin-persistedstate:
         specifier: ^3.2.1
         version: 3.2.1(pinia@2.1.7(typescript@4.9.5)(vue@3.4.31(typescript@4.9.5)))
+      uni-mini-router:
+        specifier: ^0.1.6
+        version: 0.1.6
+      uni-parse-pages:
+        specifier: ^0.0.1
+        version: 0.0.1
       vue:
         specifier: ^3.4.21
         version: 3.4.31(typescript@4.9.5)
@@ -136,8 +142,8 @@ importers:
         specifier: ^9.27.0
         version: 9.27.0(eslint@8.57.0)
       husky:
-        specifier: ^8.0.3
-        version: 8.0.3
+        specifier: ^9.1.0
+        version: 9.1.0
       lint-staged:
         specifier: ^15.2.7
         version: 15.2.7
@@ -3403,9 +3409,9 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  husky@8.0.3:
-    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
-    engines: {node: '>=14'}
+  husky@9.1.0:
+    resolution: {integrity: sha512-8XCjbomYTGdNF2h50dio3T3zghmZ9f/ZNzr99YwSkvDdhEjJGs5qzy8tbFx+SG8yCx2wn9nMVfZxVrr/yT8gNQ==}
+    engines: {node: '>=18'}
     hasBin: true
 
   iconv-lite@0.4.24:
@@ -5334,6 +5340,12 @@ packages:
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
+  uni-mini-router@0.1.6:
+    resolution: {integrity: sha512-dgeEYCv00yTkiX3gVAQXrx4IAzAVtZv+2lVtVaixH6J/IHfZP7R3wqUwBvy4eFD0vP20p+QWNNE2c5LuHbPSiQ==}
+
+  uni-parse-pages@0.0.1:
+    resolution: {integrity: sha512-OyuNFo/nCw7mnZnrtTYi/C12uWxmK7FczrxRATZETCh7j23uk1kOxEWVD4BXRSjif7YJg0ZPYQE4xBWqxUMHAw==}
 
   unicode-canonical-property-names-ecmascript@2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==}
@@ -10011,7 +10023,7 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  husky@8.0.3: {}
+  husky@9.1.0: {}
 
   iconv-lite@0.4.24:
     dependencies:
@@ -12216,6 +12228,10 @@ snapshots:
       - supports-color
 
   undici-types@5.26.5: {}
+
+  uni-mini-router@0.1.6: {}
+
+  uni-parse-pages@0.0.1: {}
 
   unicode-canonical-property-names-ecmascript@2.0.0: {}
 
