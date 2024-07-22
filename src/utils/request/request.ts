@@ -34,14 +34,14 @@ service.interceptors.request.use(
 );
 
 // 添加一个响应拦截器
-un.interceptors.response.use(
+service.interceptors.response.use(
   (response: UnResponse<CustomSuccessData<any>>) => {
     const { status, data } = response;
     if (status === 200) {
       // 接口网络请求成功，关闭等待提示
       if (data.code === 0) {
         // 接口请求结果正确
-        return data;
+        return data.data;
       } else {
         checkStatus(data.code, data.message);
         return Promise.reject(data);

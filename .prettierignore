@@ -10,3 +10,12 @@
 /public/*
 
 uni_modules/
+
+# unplugin-vue-components 生成的类型文件
+components.d.ts
+# vite-plugin-uni-pages 生成的类型文件，每次切换分支都一堆不同的，所以直接 .gitignore
+uni-pages.d.ts
+
+# 插件生成的文件
+src/pages.json
+src/manifest.json
