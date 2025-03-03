@@ -1,5 +1,5 @@
-import { UnConfig, UnParams } from '@uni-helper/uni-network';
 import request from './request';
+import type { UnConfig, UnParams } from '@uni-helper/uni-network';
 
 /**
  * 封装get请求方法

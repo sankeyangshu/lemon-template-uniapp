@@ -1,11 +1,14 @@
+import path from 'node:path';
+import process from 'node:process';
 import Uni from '@dcloudio/vite-plugin-uni';
 import UniComponents from '@uni-helper/vite-plugin-uni-components';
 import UniLayouts from '@uni-helper/vite-plugin-uni-layouts';
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest';
 import UniPages from '@uni-helper/vite-plugin-uni-pages';
-import path from 'path';
-import { ConfigEnv, defineConfig, loadEnv, UserConfig } from 'vite';
+import UnoCSS from 'unocss/vite';
+import { defineConfig, loadEnv } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import type { ConfigEnv, UserConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig((config: ConfigEnv): UserConfig => {
@@ -37,6 +40,7 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
         directoryAsNamespace: true,
       }),
       Uni(),
+      UnoCSS(),
       createSvgIconsPlugin({
         // 指定需要缓存的svg图标文件目录
         iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],

@@ -1,7 +1,7 @@
 import { createRouter } from 'uni-mini-router';
 import pagesJsonToRoutes from 'uni-parse-pages';
-import { App } from 'vue';
 import pagesJson from '../pages.json';
+import type { App } from 'vue';
 
 // 生成路由表
 const routes = pagesJsonToRoutes(pagesJson);

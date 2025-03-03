@@ -1,7 +1,7 @@
-import { App } from 'vue';
 import { createI18n } from 'vue-i18n';
 import en from './modules/en.json';
 import zhHans from './modules/zh-Hans.json';
+import type { App } from 'vue';
 
 /**
  * 创建i18n实例

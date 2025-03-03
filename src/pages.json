@@ -1,25 +1,16 @@
 {
-  "globalStyle": {
-    "navigationStyle": "default",
-    "navigationBarTitleText": "Uniapp-Template",
-    "navigationBarBackgroundColor": "#f8f8f8",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#FFFFFF",
-    "h5": {
-      "navigationStyle": "custom"
-    }
-  },
-  "easycom": {
-    "autoscan": true,
-    "custom": {
-      "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue"
-    }
-  },
-  "pages": [
+  "pages": [ 
     {
       "path": "pages/index/index",
-      "type": "home"
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
     }
   ],
-  "subPackages": []
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  }
 }

@@ -1,6 +1,7 @@
-import { un, UnError, UnResponse } from '@uni-helper/uni-network';
+import { un } from '@uni-helper/uni-network';
 import { useUserStore } from '@/store/modules/user';
 import { checkStatus } from './status';
+import type { UnError, UnResponse } from '@uni-helper/uni-network';
 
 // 创建新的实例
 const service = un.create({

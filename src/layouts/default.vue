@@ -1,8 +1,8 @@
 <template>
   <view class="default-layout">
     <slot />
-    <wd-toast />
-    <wd-message-box />
+    <WdToast />
+    <WdMessageBox />
   </view>
 </template>
 
