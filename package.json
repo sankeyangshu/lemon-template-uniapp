@@ -4,7 +4,7 @@
   "type": "commonjs",
   "private": true,
   "packageManager": "pnpm@9.15.4",
-  "description": "使用 Uniapp + TS 构建的基础项目模版",
+  "description": "An mobile web apps template based on the UniApp ecosystem",
   "author": {
     "name": "sankeyangshu",
     "email": "sankeyangshu@gmail.com",
@@ -24,8 +24,7 @@
     "templates",
     "echarts",
     "typescript",
-    "vant",
-    "vueuse",
+    "wot-design-uni",
     "pinia",
     "i18n",
     "unocss"
@@ -89,7 +88,7 @@
     "@dcloudio/uni-mp-xhs": "3.0.0-4030620241128001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4030620241128001",
     "@uni-helper/uni-network": "^0.20.0",
-    "pinia": "^3.0.1",
+    "pinia": "2.0.36",
     "pinia-plugin-persistedstate": "^4.2.0",
     "uni-mini-router": "^0.1.6",
     "uni-parse-pages": "^0.0.1",
@@ -122,7 +121,6 @@
     "unocss": "66.1.0-beta.3",
     "unocss-applet": "^0.9.0",
     "vite": "5.2.8",
-    "vite-plugin-svg-icons": "^2.0.1",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^1.0.24"
   },

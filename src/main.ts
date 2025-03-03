@@ -3,9 +3,7 @@ import { setupI18n } from '@/locales'; // 导入i18n
 import { setupRouter } from '@/router';
 import { setupStore } from '@/store';
 import App from './App.vue';
-import 'virtual:svg-icons-register';
-import 'virtual:uno.css';
-import '@unocss/reset/normalize.css';
+import 'uno.css';
 
 export function createApp() {
   const app = createSSRApp(App);

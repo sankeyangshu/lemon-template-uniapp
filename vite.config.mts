@@ -1,14 +1,16 @@
 import path from 'node:path';
 import process from 'node:process';
-import Uni from '@dcloudio/vite-plugin-uni';
+import uniModule from '@dcloudio/vite-plugin-uni';
 import UniComponents from '@uni-helper/vite-plugin-uni-components';
 import UniLayouts from '@uni-helper/vite-plugin-uni-layouts';
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest';
 import UniPages from '@uni-helper/vite-plugin-uni-pages';
 import UnoCSS from 'unocss/vite';
 import { defineConfig, loadEnv } from 'vite';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import type { ConfigEnv, UserConfig } from 'vite';
+
+// @ts-expect-error missing types
+const Uni = uniModule.default || uniModule;
 
 // https://vitejs.dev/config/
 export default defineConfig((config: ConfigEnv): UserConfig => {
@@ -41,12 +43,6 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
       }),
       Uni(),
       UnoCSS(),
-      createSvgIconsPlugin({
-        // 指定需要缓存的svg图标文件目录
-        iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-        // 指定symbolId格式
-        symbolId: 'icon-[dir]-[name]',
-      }),
     ],
 
     // 配置别名
@@ -54,6 +50,14 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
       alias: {
         '@': path.join(process.cwd(), './src'),
       },
+    },
+
+    // 组件国际化
+    optimizeDeps: {
+      exclude:
+        process.env.UNI_PLATFORM === 'h5' && process.env.NODE_ENV === 'development'
+          ? ['wot-design-uni']
+          : [],
     },
 
     // 跨域代理
@@ -81,7 +85,7 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
       // 方便非h5端调试
       sourcemap: VITE_SHOW_SOURCEMAP === 'true', // 默认是false
       target: 'es6',
-      minify: 'terser',
+      minify: mode === 'development' ? false : 'terser',
       terserOptions: {
         compress: {
           drop_console: VITE_DELETE_CONSOLE === 'true',
