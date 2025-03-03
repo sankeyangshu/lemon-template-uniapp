@@ -22,7 +22,7 @@ export default defineConfig(
       ],
       'vue/component-name-in-template-casing': [
         'warn',
-        'PascalCase',
+        'kebab-case',
         {
           registeredComponentsOnly: false,
           ignores: ['/^icon-/'],

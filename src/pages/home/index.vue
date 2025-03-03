@@ -8,7 +8,7 @@
 </route>
 
 <template>
-  <view> </view>
+  <view class="box-border wh-full"> hello world </view>
 </template>
 
 <script lang="ts" setup></script>

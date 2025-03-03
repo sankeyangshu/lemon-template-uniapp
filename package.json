@@ -93,7 +93,7 @@
     "uni-mini-router": "^0.1.6",
     "uni-parse-pages": "^0.0.1",
     "vue": "^3.4.21",
-    "vue-i18n": "^11.1.1",
+    "vue-i18n": "9.1.9",
     "wot-design-uni": "^1.7.1"
   },
   "devDependencies": {
