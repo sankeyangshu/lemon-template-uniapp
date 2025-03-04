@@ -3,9 +3,11 @@ import { createI18n } from 'vue-i18n';
 import { Locale } from 'wot-design-uni';
 import enUS from 'wot-design-uni/locale/lang/en-US';
 import zhCN from 'wot-design-uni/locale/lang/zh-CN';
+import enUSMessage from './modules/en-US.json';
+import zhCNMessage from './modules/zh-CN.json';
 
 // 默认使用的语言
-const defaultLanguage = 'zhCn';
+const defaultLanguage = 'zh-CN';
 
 const wotLocales = {
   'zh-CN': zhCN,
@@ -19,7 +21,7 @@ const wotLocales = {
 const getDefaultLanguage = () => {
   const locales = Object.keys(wotLocales);
 
-  const localLanguage = localStorage.getItem('language') || navigator.language;
+  const localLanguage = uni.getStorageSync('language') || uni.getLocale();
 
   // 存在当前语言的语言包 或 存在当前语言的任意地区的语言包
   if (locales.includes(localLanguage)) return localLanguage;
@@ -33,19 +35,23 @@ const getDefaultLanguage = () => {
  * @param locale 语言
  * @param i18n 国际化配置
  */
-const loadLocaleMsg = async (locale: string, i18n: I18n) => {
-  const messages = await import(`./modules/${locale}.json`);
-  i18n.global.setLocaleMessage(locale, messages.default);
+const loadLocaleMsg = (locale: string, i18n: I18n) => {
+  const messages = {
+    'zh-CN': zhCNMessage,
+    'en-US': enUSMessage,
+  };
+  i18n.global.setLocaleMessage(locale, messages[locale as keyof typeof messages]);
 };
 
 const setLang = async (lang: string, i18n: I18n) => {
-  await loadLocaleMsg(lang, i18n);
+  loadLocaleMsg(lang, i18n);
 
-  document.querySelector('html')!.setAttribute('lang', lang);
-  localStorage.setItem('language', lang);
+  // 设置本地语言
+  uni.setLocale(lang);
+  uni.setStorageSync('language', lang);
   i18n.global.locale.value = lang;
 
-  // 设置 vant 组件语言包
+  // 设置 wot-design-uni 组件语言包
   Locale.use(lang, wotLocales[lang as keyof typeof wotLocales]);
 };
 

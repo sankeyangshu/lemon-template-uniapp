@@ -14,7 +14,7 @@
     "notFound": "404页 演示"
   },
   "home": {
-    "info": "基于 UniApp 生态系统的移动 Web 应用模板",
+    "info": "基于 UniApp 生态系统的小程序应用模板",
     "vue": "Vue3 + Vite5",
     "typescript": "TypeScript",
     "wot-design-uni": "Wot Design Uni 组件库",

@@ -14,7 +14,7 @@
     "notFound": "404 Page Demo"
   },
   "home": {
-    "info": "Mobile Web Application Template based on UniApp Ecosystem",
+    "info": "Mobile Mini Program Application Template based on UniApp Ecosystem",
     "vue": "Vue3 + Vite5",
     "typescript": "TypeScript",
     "wot-design-uni": "Wot Design Uni Component Library",
