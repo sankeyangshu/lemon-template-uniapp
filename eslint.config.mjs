@@ -25,7 +25,7 @@ export default defineConfig(
         'kebab-case',
         {
           registeredComponentsOnly: false,
-          ignores: ['/^icon-/'],
+          ignores: ['/^icon-/', 'Icon'],
         },
       ],
       'unocss/order-attributify': 'off',

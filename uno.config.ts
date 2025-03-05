@@ -3,7 +3,7 @@ import {
   defineConfig,
   presetAttributify,
   presetIcons,
-  presetUno,
+  presetWind3,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss';
@@ -20,7 +20,7 @@ if (isApplet) {
 } else {
   presets.push(
     // 非小程序用官方预设
-    presetUno(),
+    presetWind3(),
     // 支持css class属性化
     presetAttributify()
   );
