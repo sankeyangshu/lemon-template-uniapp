@@ -1,7 +1,10 @@
 <template>
   <wd-config-provider :theme="darkMode">
-    <view class="default-layout">
-      <slot />
+    <view
+      class="min-h-screen min-w-screen"
+      :class="darkMode === 'dark' ? 'layout-dark' : 'layout-light'"
+    >
+      <slot></slot>
       <wd-toast />
       <wd-message-box />
     </view>
@@ -17,17 +20,25 @@ const { darkMode } = storeToRefs(settingStore);
 </script>
 
 <style lang="scss">
-.default-layout {
-  min-height: calc(100vh - var(--window-bottom));
-  box-sizing: border-box;
-  color: #323233;
-  background-color: #f0f2f5;
+.layout-light {
+  --color-text: #323233;
+  --color-background: #f0f2f5;
+  --color-background-2: #ffffff;
+  --color-block-background: #ffffff;
+  --color-border: #ebedf0;
+
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
-.wot-theme-dark {
-  .default-layout {
-    color: #f5f5f5;
-    background-color: #222222;
-  }
+.layout-dark {
+  --color-text: #f5f5f5;
+  --color-background: #222222;
+  --color-background-2: #1c1c1e;
+  --color-block-background: #3a3a3c;
+  --color-border: #3a3a3c;
+
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 </style>

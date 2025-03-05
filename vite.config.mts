@@ -29,7 +29,7 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
       UniPages({
         dts: 'src/types/uni-pages.d.ts',
         exclude: ['**/components/**/**.*'],
-        homePage: 'pages/index/index',
+        homePage: 'pages/home/index',
         subPackages: ['src/pages-sub'],
       }),
       // @see https://github.com/uni-helper/vite-plugin-uni-layouts

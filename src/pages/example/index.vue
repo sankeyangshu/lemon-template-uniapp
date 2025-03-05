@@ -1,5 +1,7 @@
 <route lang="json5">
 {
+  layout: 'tabbar',
+  name: 'example',
   style: {
     navigationBarTitleText: '示例',
   },
@@ -37,13 +39,13 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { language } from '@/locales';
 
 const { t } = useI18n();
 
-const menuItems = reactive([
+const menuItems = computed(() => [
   { title: `💿 ${t('route.mock')}`, route: 'mock' },
   { title: `📊 ${t('route.echarts')}`, route: 'echarts' },
   { title: `🎨 ${t('route.icon')}`, route: 'icon' },

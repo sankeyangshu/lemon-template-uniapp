@@ -26,6 +26,7 @@ export default defineUniPages({
     fontSize: '10px',
     iconWidth: '24px',
     spacing: '3px',
+    custom: true,
     list: [
       {
         iconPath: 'static/tabbar/home.png',

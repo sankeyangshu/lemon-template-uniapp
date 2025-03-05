@@ -1,6 +1,8 @@
 <!-- 使用 type="home" 属性设置首页，其他页面不需要设置，默认为page；推荐使用json5，更强大，且允许注释 -->
 <route lang="json5" type="home">
 {
+  layout: 'tabbar',
+  name: 'home',
   style: {
     navigationBarTitleText: '首页',
   },
@@ -13,7 +15,9 @@
       <view class="mx-auto mb-80rpx mt-200rpx h-200rpx w-200rpx">
         <image class="block wh-full" alt="logo" src="/static/images/logo.png" />
       </view>
-      <view class="my-20rpx box-border w-full rounded-24rpx px-40rpx py-24rpx text-36rpx">
+      <view
+        class="my-20rpx box-border w-full rounded-24rpx bg-[var(--color-block-background)] px-40rpx py-24rpx text-36rpx"
+      >
         <view class="flex-center leading-70rpx" @click="onClickOpenGithub">
           <view class="mr-16rpx font-bold">Lemon-Template-Uniapp</view>
           <wd-icon name="github-filled" size="22px"></wd-icon>
