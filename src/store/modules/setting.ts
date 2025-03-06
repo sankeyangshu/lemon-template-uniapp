@@ -8,13 +8,21 @@ export const useSettingStore = defineStore(
   () => {
     const darkMode = ref<ConfigProviderTheme>('light');
 
+    const themeColor = ref('#4D80F0'); // 主题颜色
+
     const setThemeDark = (value: ConfigProviderTheme) => {
       darkMode.value = value;
     };
 
+    const setThemeColor = (value: string) => {
+      themeColor.value = value;
+    };
+
     return {
       darkMode,
+      themeColor,
       setThemeDark,
+      setThemeColor,
     };
   },
   {

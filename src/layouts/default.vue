@@ -1,5 +1,5 @@
 <template>
-  <wd-config-provider :theme="darkMode">
+  <wd-config-provider :theme="darkMode" :theme-vars="themeVars">
     <view
       class="min-h-screen min-w-screen"
       :class="darkMode === 'dark' ? 'layout-dark' : 'layout-light'"
@@ -13,10 +13,18 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia';
+import { computed } from 'vue';
 import { useSettingStore } from '@/store/modules/setting';
+import type { ConfigProviderThemeVars } from 'wot-design-uni';
 
 const settingStore = useSettingStore();
-const { darkMode } = storeToRefs(settingStore);
+const { darkMode, themeColor } = storeToRefs(settingStore);
+
+const themeVars = computed<ConfigProviderThemeVars>(() => {
+  return {
+    colorTheme: themeColor.value,
+  };
+});
 </script>
 
 <style lang="scss">

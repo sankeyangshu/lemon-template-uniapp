@@ -1,5 +1,5 @@
 <template>
-  <wd-config-provider :theme="darkMode">
+  <wd-config-provider :theme="darkMode" :theme-vars="themeVars">
     <view
       class="min-h-screen min-w-screen"
       :class="darkMode === 'dark' ? 'layout-dark' : 'layout-light'"
@@ -11,7 +11,7 @@
       <wd-tabbar
         :model-value="activeTabbar.name"
         inactive-color="#999999"
-        active-color="#4D80F0"
+        :active-color="themeColor"
         fixed
         bordered
         safe-area-inset-bottom
@@ -23,11 +23,8 @@
             :name="item.name"
             :title="item.title"
             :value="getTabbarItemValue(item.name)"
+            :icon="item.icon"
           >
-            <template #icon="{ active: iconActive }">
-              <wd-icon v-if="iconActive" :name="item.selectedIcon" size="20px" />
-              <wd-icon v-else :name="item.icon" size="20px" />
-            </template>
           </wd-tabbar-item>
         </template>
       </wd-tabbar>
@@ -42,12 +39,13 @@
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia';
 import { useRoute, useRouter } from 'uni-mini-router';
-import { nextTick, onMounted } from 'vue';
+import { computed, nextTick, onMounted } from 'vue';
 import { useTabbar } from '@/hooks/useTabbar';
 import { useSettingStore } from '@/store/modules/setting';
+import type { ConfigProviderThemeVars } from 'wot-design-uni';
 
 const settingStore = useSettingStore();
-const { darkMode } = storeToRefs(settingStore);
+const { darkMode, themeColor } = storeToRefs(settingStore);
 
 const router = useRouter();
 const route = useRoute();
@@ -66,6 +64,12 @@ const onChangeTabbar = ({ value }: { value: string }) => {
   setTabbarItemActive(value);
   router.pushTab({ name: value });
 };
+
+const themeVars = computed<ConfigProviderThemeVars>(() => {
+  return {
+    colorTheme: themeColor.value,
+  };
+});
 </script>
 
 <style lang="scss">

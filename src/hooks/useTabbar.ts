@@ -6,30 +6,26 @@ export interface TabbarItemType {
   active: boolean;
   title: string;
   icon: string;
-  selectedIcon: string;
   pagePath: string;
 }
 
 const tabbarItems = ref<TabbarItemType[]>([
   {
-    icon: '/static/tabbar/home.png',
-    selectedIcon: '/static/tabbar/home-active.png',
+    icon: 'home',
     pagePath: '/pages/home/index',
     title: '首页',
     name: 'home',
     active: true,
   },
   {
-    icon: '/static/tabbar/example.png',
-    selectedIcon: '/static/tabbar/example-active.png',
+    icon: 'a-controlplatform',
     pagePath: '/pages/example/index',
     title: '示例',
     name: 'example',
     active: false,
   },
   {
-    icon: '/static/tabbar/mine.png',
-    selectedIcon: '/static/tabbar/mine-active.png',
+    icon: 'user',
     pagePath: '/pages/mine/index',
     title: '我的',
     name: 'mine',
