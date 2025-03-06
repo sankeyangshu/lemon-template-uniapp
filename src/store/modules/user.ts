@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
+import { postLoginAPI } from '@/api/user';
+import type { loginDataType } from '@/api/user';
 
 interface userStoreType {
   token: string;
@@ -24,6 +26,25 @@ export const useUserStore = defineStore(
     };
 
     /**
+     * 登录
+     * @param loginForm 登录表单
+     */
+    const login = async (loginForm: loginDataType) => {
+      const { username, password } = loginForm;
+
+      return new Promise<void>((resolve, reject) => {
+        postLoginAPI({ username: username.trim(), password })
+          .then(({ data }) => {
+            setToken(data.token); // 保存用户token
+            resolve();
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      });
+    };
+
+    /**
      * 退出登录
      */
     const logout = () => {
@@ -33,6 +54,7 @@ export const useUserStore = defineStore(
     return {
       userState,
       setToken,
+      login,
       logout,
     };
   },

@@ -5,8 +5,11 @@
 
 interface NavigateToOptions {
   url: "/pages/home/index" |
+       "/pages/example/icon" |
        "/pages/example/index" |
-       "/pages/mine/index";
+       "/pages/login/index" |
+       "/pages/mine/index" |
+       "/pages/themeSetting/index";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 

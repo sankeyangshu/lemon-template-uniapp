@@ -45,13 +45,7 @@ import { language } from '@/locales';
 
 const { t } = useI18n();
 
-const menuItems = computed(() => [
-  { title: `💿 ${t('route.mock')}`, route: 'mock' },
-  { title: `📊 ${t('route.echarts')}`, route: 'echarts' },
-  { title: `🎨 ${t('route.icon')}`, route: 'icon' },
-  { title: `🧡 ${t('route.keepAlive')}`, route: 'keepAlive' },
-  { title: `🙅 ${t('route.notFound')}`, route: '404' },
-]);
+const menuItems = computed(() => [{ title: `🎨 ${t('route.icon')}`, route: 'icon' }]);
 
 // 语言选项
 const languageColumns = [

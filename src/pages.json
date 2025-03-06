@@ -24,6 +24,7 @@
     "fontSize": "10px",
     "iconWidth": "24px",
     "spacing": "3px",
+    "custom": true,
     "list": [
       {
         "iconPath": "static/tabbar/home.png",
@@ -49,22 +50,51 @@
     {
       "path": "pages/home/index",
       "type": "home",
+      "layout": "tabbar",
+      "name": "home",
       "style": {
         "navigationBarTitleText": "首页"
       }
     },
     {
+      "path": "pages/example/icon",
+      "type": "page",
+      "name": "icon",
+      "style": {
+        "navigationBarTitleText": "Icon 示例"
+      }
+    },
+    {
       "path": "pages/example/index",
       "type": "page",
+      "layout": "tabbar",
+      "name": "example",
       "style": {
         "navigationBarTitleText": "示例"
       }
     },
     {
-      "path": "pages/mine/index",
+      "path": "pages/login/index",
       "type": "page",
       "style": {
-        "navigationBarTitleText": "我的"
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "type": "page",
+      "layout": "tabbar",
+      "name": "mine",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/themeSetting/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "主题设置"
       }
     }
   ],
