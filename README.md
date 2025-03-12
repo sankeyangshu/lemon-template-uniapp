@@ -23,7 +23,7 @@
 
 ## 简介
 
-🚀🚀🚀 **lemon-template-uniapp** 使用了最新的`Uniapp`、`Vue3`、`Vite5`、`wot-ui`、`Pinia`、`Typescript`、`UnoCSS`等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色等功能。
+🚀🚀🚀 **lemon-template-uniapp** 使用了最新的`Uniapp`、`Vue3`、`Vite6`、`wot-ui`、`Pinia`、`Typescript`、`UnoCSS`等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色等功能。
 
 你可以在此之上直接开发你的业务代码！希望你能喜欢。👋👋👋
 
@@ -38,7 +38,7 @@
 ## 项目功能
 
 - ⚡️ 使用 Vue3 + TypeScript 开发，单文件组件**＜ script setup ＞**
-- ✨ 采用 Vite5 作为项目开发、打包工具
+- ✨ 采用 Vite6 作为项目开发、打包工具
 - 🍕 整个项目集成了 TypeScript
 - 🍍 使用 Pinia 替代 Vuex，轻量、简单、易用，集成 Pinia 持久化插件
 - 📦 组件自动化加载
