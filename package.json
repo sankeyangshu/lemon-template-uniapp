@@ -1,6 +1,6 @@
 {
   "name": "lemon-template-uniapp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "commonjs",
   "private": true,
   "packageManager": "pnpm@10.6.1",
@@ -91,7 +91,7 @@
     "pinia-plugin-persistedstate": "^4.2.0",
     "uni-mini-router": "^0.1.6",
     "uni-parse-pages": "^0.0.1",
-    "vue": "^3.4.21",
+    "vue": "~3.5.0",
     "vue-i18n": "9.1.9",
     "wot-design-uni": "^1.7.1"
   },
@@ -120,7 +120,8 @@
     "typescript": "5.7.2",
     "unocss": "66.1.0-beta.3",
     "unocss-applet": "^0.9.0",
-    "vite": "5.2.8",
+    "vite": "^6.2.1",
+    "vite-plugin-uni-polyfill": "^0.1.0",
     "vue-eslint-parser": "^10.1.1",
     "vue-tsc": "^2.2.8"
   },

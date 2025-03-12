@@ -39,21 +39,21 @@
 
     <view class="my-32rpx px-32rpx">
       <wd-cell-group border>
-        <wd-cell title="主题设置" is-link to="/pages/themeSetting/index">
+        <wd-cell :title="$t('route.themeSetting')" is-link to="/pages/themeSetting/index">
           <template #icon>
             <view class="leading-48rpx">
               <view class="i-mdi-palette mr-10rpx text-36rpx"></view>
             </view>
           </template>
         </wd-cell>
-        <wd-cell title="项目文档" is-link @click="onClickOpenDocs">
+        <wd-cell :title="$t('mine.projectDocs')" is-link @click="onClickOpenDocs">
           <template #icon>
             <view class="leading-48rpx">
               <view class="i-mdi-book-open-variant mr-10rpx text-36rpx"></view>
             </view>
           </template>
         </wd-cell>
-        <wd-cell v-if="isLogin" title="退出登录" is-link @click="onClickLogout">
+        <wd-cell v-if="isLogin" :title="$t('mine.logout')" is-link @click="onClickLogout">
           <template #icon>
             <view class="leading-48rpx">
               <view class="i-mdi-logout mr-10rpx text-36rpx"></view>
