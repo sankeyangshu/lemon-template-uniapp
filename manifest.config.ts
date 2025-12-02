@@ -3,7 +3,7 @@ import { defineManifestConfig } from '@uni-helper/vite-plugin-uni-manifest';
 import { loadEnv } from 'vite';
 
 // 获取环境变量
-const env = loadEnv(process.env.NODE_ENV!, process.cwd());
+const env = loadEnv(process.env.NODE_ENV!, process.cwd()) as Env.ImportMeta;
 const {
   VITE_APP_TITLE,
   VITE_UNI_APPID,
@@ -13,13 +13,13 @@ const {
 } = env;
 
 export default defineManifestConfig({
-  name: VITE_APP_TITLE,
-  appid: VITE_UNI_APPID,
-  description: '',
-  versionName: '1.0.0',
-  versionCode: '100',
-  transformPx: false,
-  locale: VITE_FALLBACK_LOCALE, // 国际化默认语言
+  'name': VITE_APP_TITLE,
+  'appid': VITE_UNI_APPID,
+  'description': '',
+  'versionName': '1.0.0',
+  'versionCode': '100',
+  'transformPx': false,
+  'locale': VITE_FALLBACK_LOCALE, // 国际化默认语言
   /* 5+App特有相关 */
   'app-plus': {
     usingComponents: true,
@@ -62,13 +62,19 @@ export default defineManifestConfig({
     },
   },
   /* 快应用特有相关 */
-  quickapp: {},
+  'quickapp': {},
   /* 小程序特有相关 */
   'mp-weixin': {
     appid: VITE_WX_APPID,
     setting: {
       urlCheck: false,
+      // 是否启用 ES6 转 ES5
+      es6: true,
+      minified: true,
     },
+    // 是否合并组件虚拟节点外层属性，uni-app 3.5.1+ 开始支持。目前仅支持 style、class 属性。
+    // 默认不开启（undefined），这里设置为开启。
+    mergeVirtualHostAttributes: true,
     usingComponents: true,
     // __usePrivacyCheck__: true,
   },
@@ -81,13 +87,13 @@ export default defineManifestConfig({
   'mp-toutiao': {
     usingComponents: true,
   },
-  h5: {
+  'h5': {
     router: {
       base: VITE_APP_PUBLIC_BASE,
     },
   },
-  uniStatistics: {
+  'uniStatistics': {
     enable: false,
   },
-  vueVersion: '3',
+  'vueVersion': '3',
 });
