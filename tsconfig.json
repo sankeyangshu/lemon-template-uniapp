@@ -1,30 +1,46 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "target": "ESNext",
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "useDefineForClassFields": true,
     "baseUrl": ".",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "paths": {
       "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
-    "types": ["@dcloudio/types", "wot-design-uni/global"],
-    "outDir": "dist",
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
+    "types": [
+      "vite/client",
+      "@dcloudio/types",
+      "@uni-helper/uni-types",
+      "@uni-helper/vite-plugin-uni-pages",
+      "@mini-types/alipay",
+      "miniprogram-api-typings",
+      "wot-design-uni/global.d.ts"
+    ],
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "noImplicitThis": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "vueCompilerOptions": {
-    // 调整 Volar（Vue 语言服务工具）解析行为，用于为 uni-app 组件提供 TypeScript 类型
-    "plugins": ["@uni-helper/uni-types/volar-plugin"]
-  },
   "include": [
+    "build/**/*.ts",
     "src/**/*.ts",
-    "src/**/*.d.ts",
     "src/**/*.tsx",
+    "src/**/*.jsx",
     "src/**/*.vue",
-    "src/**/*.json"
+    "**/*.d.ts",
+    "*.config.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"],
+  "vueCompilerOptions": {
+    "plugins": ["@uni-helper/uni-types/volar-plugin"]
+  }
 }

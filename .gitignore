@@ -23,3 +23,6 @@ dist
 *.njsproj
 *.sln
 *.sw?
+
+src/manifest.json
+src/pages.json

@@ -1,0 +1,51 @@
+import type { PluginOption } from 'vite';
+import Uni from '@uni-helper/plugin-uni';
+import UniComponents from '@uni-helper/vite-plugin-uni-components';
+import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers';
+import UniLayouts from '@uni-helper/vite-plugin-uni-layouts';
+import UniManifest from '@uni-helper/vite-plugin-uni-manifest';
+import UniMiddleware from '@uni-helper/vite-plugin-uni-middleware';
+import UniPages from '@uni-helper/vite-plugin-uni-pages';
+import UniPlatform from '@uni-helper/vite-plugin-uni-platform';
+import UniPlatformModifier from '@uni-helper/vite-plugin-uni-platform-modifier';
+import UniRoot from '@uni-ku/root';
+import ViteRestart from 'vite-plugin-restart';
+
+/**
+ * 配置 vite 插件
+ */
+export function createVitePlugins() {
+  const vitePlugins: PluginOption = [
+    // https://uni-helper.js.org/vite-plugin-uni-pages
+    UniPages({
+      exclude: ['**/components/**/*.*'],
+      dts: 'src/types/uni-pages.d.ts',
+    }),
+    // https://uni-helper.js.org/vite-plugin-uni-layouts
+    UniLayouts(),
+    // https://uni-helper.js.org/vite-plugin-uni-manifest
+    UniManifest(),
+    // https://uni-helper.js.org/vite-plugin-uni-platform
+    UniPlatform(),
+    // https://uni-helper.js.org/vite-plugin-uni-platform-modifier
+    UniPlatformModifier(),
+    // https://uni-helper.js.org/vite-plugin-uni-middleware
+    UniMiddleware(),
+    // https://github.com/uni-ku/root
+    UniRoot({ excludePages: ['**/components/**/*.*'] }),
+    // https://uni-helper.js.org/vite-plugin-uni-components
+    UniComponents({
+      dts: 'src/types/components.d.ts',
+      resolvers: [WotResolver()],
+    }),
+    // https://uni-helper.js.org/plugin-uni
+    Uni(),
+
+    // 通过这个插件，再修改vite.config.ts文件则不需要重新运行也生效配置
+    ViteRestart({
+      restart: ['vite.config.ts'],
+    }),
+  ];
+
+  return vitePlugins;
+}
