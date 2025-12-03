@@ -40,6 +40,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "weapp-tw patch",
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
@@ -59,6 +60,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4080520251106001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4080520251106001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4080520251106001",
+    "@uni-helper/uni-network": "^0.23.0",
     "pinia": "2.2.4",
     "vue": "3.4.21",
     "vue-i18n": "9.6.2",
@@ -74,6 +76,7 @@
     "@dcloudio/uni-stacktracey": "3.0.0-4080520251106001",
     "@dcloudio/vite-plugin-uni": "3.0.0-4080520251106001",
     "@mini-types/alipay": "^3.0.14",
+    "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^24.10.1",
     "@uni-helper/eslint-config": "^0.5.0",
     "@uni-helper/plugin-uni": "0.1.0",
@@ -90,15 +93,18 @@
     "@vue/runtime-core": "3.4.21",
     "@vue/tsconfig": "^0.8.1",
     "eslint": "^9.39.1",
+    "eslint-plugin-better-tailwindcss": "^3.7.11",
     "eslint-plugin-format": "^1.0.2",
     "lint-staged": "^16.2.7",
     "miniprogram-api-typings": "^4.1.0",
     "sass": "1.64.2",
     "simple-git-hooks": "^2.13.1",
+    "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "vite": "5.2.8",
     "vite-plugin-restart": "^2.0.0",
-    "vue-tsc": "^3.1.4"
+    "vue-tsc": "^3.1.4",
+    "weapp-tailwindcss": "^4.8.7"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm typecheck && pnpm lint-staged",

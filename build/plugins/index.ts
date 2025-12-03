@@ -1,4 +1,5 @@
 import type { PluginOption } from 'vite';
+import path from 'node:path';
 import Uni from '@uni-helper/plugin-uni';
 import UniComponents from '@uni-helper/vite-plugin-uni-components';
 import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers';
@@ -10,6 +11,7 @@ import UniPlatform from '@uni-helper/vite-plugin-uni-platform';
 import UniPlatformModifier from '@uni-helper/vite-plugin-uni-platform-modifier';
 import UniRoot from '@uni-ku/root';
 import ViteRestart from 'vite-plugin-restart';
+import { UnifiedViteWeappTailwindcssPlugin } from 'weapp-tailwindcss/vite';
 
 /**
  * 配置 vite 插件
@@ -40,6 +42,13 @@ export function createVitePlugins() {
     }),
     // https://uni-helper.js.org/plugin-uni
     Uni(),
+
+    UnifiedViteWeappTailwindcssPlugin({
+      rem2rpx: true,
+      cssEntries: [
+        path.resolve(import.meta.dirname, './src/styles/global.css'),
+      ],
+    }),
 
     // 通过这个插件，再修改vite.config.ts文件则不需要重新运行也生效配置
     ViteRestart({

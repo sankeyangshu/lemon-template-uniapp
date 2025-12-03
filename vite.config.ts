@@ -1,6 +1,7 @@
 import type { ConfigEnv, UserConfig } from 'vite';
 import process from 'node:process';
 import { fileURLToPath, URL } from 'node:url';
+import tailwindcss from '@tailwindcss/postcss';
 import { defineConfig, loadEnv } from 'vite';
 import { createProxy, wrapperEnv } from './build/config';
 import { createVitePlugins } from './build/plugins';
@@ -17,6 +18,14 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
 
     // 加载插件
     plugins: createVitePlugins(),
+
+    css: {
+      postcss: {
+        plugins: [
+          tailwindcss(),
+        ],
+      },
+    },
 
     // 路径别名
     resolve: {
