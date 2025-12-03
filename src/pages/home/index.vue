@@ -1,48 +1,59 @@
-<!-- 使用 type="home" 属性设置首页，其他页面不需要设置，默认为page；推荐使用json5，更强大，且允许注释 -->
-<route lang="json5" type="home">
-{
-  layout: 'tabbar',
-  name: 'home',
-  style: {
-    navigationBarTitleText: '首页',
-  },
-}
-</route>
-
 <template>
-  <view class="box-border wh-full flex-center px-24rpx">
-    <view class="wh-full">
-      <view class="mx-auto mb-80rpx mt-200rpx h-200rpx w-200rpx">
-        <image class="block wh-full" alt="logo" src="/static/images/logo.png" />
-      </view>
-      <view
-        class="my-20rpx box-border w-full rounded-24rpx bg-[var(--color-block-background)] px-40rpx py-24rpx text-36rpx"
-      >
-        <view class="flex-center leading-70rpx" @click="onClickOpenGithub">
-          <view class="mr-16rpx font-bold">Lemon-Template-Uniapp</view>
-          <wd-icon name="github-filled" size="22px"></wd-icon>
-        </view>
-        <view class="mb-12rpx mt-24rpx text-28rpx leading-48rpx">
-          {{ $t('home.info') }}
-        </view>
-      </view>
+  <view class="box-border flex size-full flex-col items-center justify-center px-6 pt-safe">
+    <view class="mx-auto mt-25 size-50">
+      <image class="block size-full" alt="logo" src="/static/images/logo.png" />
+    </view>
 
-      <view class="grid mt-32rpx gap-24rpx pb-48rpx text-center text-28rpx">
+    <view class="my-2.5 box-border w-full rounded-xl px-5 py-3 text-base">
+      <view class="flex items-center justify-center leading-8" @click="onClickOpenGithub">
         <view
-          v-for="item in contentList"
-          :key="item"
-          class="box-border w-full truncate border border-[var(--color-border)] rounded-24rpx border-solid p-24rpx"
+          class="
+            mr-2 font-bold text-black
+            dark:text-white
+          "
         >
-          {{ item }}
+          Lemon-Template-UniApp
         </view>
+        <wd-icon
+          name="github-filled" size="22px" class="
+            text-black
+            dark:text-white
+          "
+        />
+      </view>
+      <view class="mt-3 mb-1.5 text-sm leading-6 text-text">
+        {{ $t('home.info') }}
+      </view>
+    </view>
+
+    <view class="mt-4 grid w-full gap-3 pb-6 text-center text-sm">
+      <view
+        v-for="item in contentList"
+        :key="item"
+        class="
+          box-border w-full truncate rounded-xl border border-solid border-[#424242] p-3 text-text
+        "
+      >
+        {{ item }}
       </view>
     </view>
   </view>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+
+defineOptions({
+  name: 'Home',
+});
+
+definePage({
+  type: 'home',
+  style: {
+    navigationBarTitleText: '首页',
+  },
+});
 
 const { t } = useI18n();
 
@@ -50,7 +61,7 @@ const contentList = computed(() => [
   `⚡ ${t('home.vue')}`,
   `🍕 ${t('home.typescript')}`,
   `🍍 ${t('home.pinia')}`,
-  `🌀 ${t('home.unocss')}`,
+  `🌀 ${t('home.tailwindcss')}`,
   `🌠 ${t('home.setup')}`,
   `🎉 ${t('home.utils')}`,
   `📡 ${t('home.axios')}`,
@@ -61,7 +72,7 @@ const contentList = computed(() => [
   `🔒 ${t('home.auth')}`,
 ]);
 
-const onClickOpenGithub = () => {
+function onClickOpenGithub() {
   uni.setClipboardData({
     data: 'https://github.com/sankeyangshu/lemon-template-uniapp',
     success: () => {
@@ -71,7 +82,5 @@ const onClickOpenGithub = () => {
       });
     },
   });
-};
+}
 </script>
-
-<style lang="scss" scoped></style>

@@ -62,6 +62,9 @@ importers:
       pinia:
         specifier: 2.2.4
         version: 2.2.4(typescript@5.9.3)(vue@3.4.21(typescript@5.9.3))
+      pinia-plugin-persistedstate:
+        specifier: ^4.7.1
+        version: 4.7.1(pinia@2.2.4(typescript@5.9.3)(vue@3.4.21(typescript@5.9.3)))
       vue:
         specifier: 3.4.21
         version: 3.4.21(typescript@5.9.3)
@@ -4985,6 +4988,20 @@ packages:
   pify@2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
+
+  pinia-plugin-persistedstate@4.7.1:
+    resolution: {integrity: sha512-WHOqh2esDlR3eAaknPbqXrkkj0D24h8shrDPqysgCFR6ghqP/fpFfJmMPJp0gETHsvrh9YNNg6dQfo2OEtDnIQ==}
+    peerDependencies:
+      '@nuxt/kit': '>=3.0.0'
+      '@pinia/nuxt': '>=0.10.0'
+      pinia: '>=3.0.0'
+    peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
+      '@pinia/nuxt':
+        optional: true
+      pinia:
+        optional: true
 
   pinia@2.2.4:
     resolution: {integrity: sha512-K7ZhpMY9iJ9ShTC0cR2+PnxdQRuwVIsXDO/WIEV/RnMC/vmSoKDTKW/exNQYPI+4ij10UjXqdNiEHwn47McANQ==}
@@ -12418,6 +12435,12 @@ snapshots:
   pidtree@0.6.0: {}
 
   pify@2.3.0: {}
+
+  pinia-plugin-persistedstate@4.7.1(pinia@2.2.4(typescript@5.9.3)(vue@3.4.21(typescript@5.9.3))):
+    dependencies:
+      defu: 6.1.4
+    optionalDependencies:
+      pinia: 2.2.4(typescript@5.9.3)(vue@3.4.21(typescript@5.9.3))
 
   pinia@2.2.4(typescript@5.9.3)(vue@3.4.21(typescript@5.9.3)):
     dependencies:

@@ -1,5 +1,6 @@
 import type { PluginOption } from 'vite';
 import path from 'node:path';
+import process from 'node:process';
 import Uni from '@uni-helper/plugin-uni';
 import UniComponents from '@uni-helper/vite-plugin-uni-components';
 import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers';
@@ -46,7 +47,7 @@ export function createVitePlugins() {
     UnifiedViteWeappTailwindcssPlugin({
       rem2rpx: true,
       cssEntries: [
-        path.resolve(import.meta.dirname, './src/styles/global.css'),
+        path.join(process.cwd(), 'src/styles/global.css'),
       ],
     }),
 

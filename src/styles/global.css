@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+@source not "dist";
+
+@custom-variant dark (.dark &);
+
+:root {
+  --app-color-text: #323233;
+  --app-color-background: #f1f2f5;
+}
+
+.dark {
+  --app-color-text: #f5f5f5;
+  --app-color-background: #141414;
+}
+
+@theme inline {
+  --color-text: var(--app-color-text);
+  --color-background: var(--app-color-background);
+}
+
+@utility pt-safe {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+@utility pb-safe {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
