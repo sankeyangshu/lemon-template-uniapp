@@ -1,4 +1,22 @@
 {
+  "api": {
+    "errMsg400": "Request failed! Please try again later",
+    "errMsg401": "Login failed! Please log in again",
+    "errMsg403": "The current account does not have permission to access!",
+    "errMsg404": "The resource you are accessing does not exist!",
+    "errMsg405": "Request method error! Please try again later",
+    "errMsg408": "Request timed out! Please try again later",
+    "errMsg500": "Service exception, please try again later!",
+    "errMsg501": "Network not implemented!",
+    "errMsg502": "Gateway error, please try again later!",
+    "errMsg503": "Service unavailable, server temporarily overloaded or under maintenance!",
+    "errMsg504": "Network timeout! Please try again later",
+    "errMsg505": "HTTP version not supported!",
+    "errMsgDefault": "Request failed!",
+    "requestCancelled": "Request cancelled",
+    "networkError": "Network connection exception, please check the network connection!",
+    "requestConfigError": "Request configuration error"
+  },
   "route": {
     "home": "Home",
     "example": "Example",
@@ -15,7 +33,7 @@
     "typescript": "TypeScript",
     "wot-design-uni": "Wot Design Uni Component Library",
     "pinia": "Pinia State Management",
-    "unocss": "Unocss Atomic CSS Framework",
+    "tailwindcss": "TailwindCSS Atomic CSS Framework",
     "setup": "Latest script setup Syntax",
     "utils": "Built-in Echarts",
     "axios": "Axios Encapsulation",
@@ -51,19 +69,5 @@
   "themeSetting": {
     "themeMode": "Theme Mode",
     "systemTheme": "System Theme Color"
-  },
-  "api": {
-    "errMsg400": "Request failed! Please try again later",
-    "errMsg401": "Login failed! Please log in again",
-    "errMsg403": "The current account does not have permission to access!",
-    "errMsg404": "The resource you are accessing does not exist!",
-    "errMsg405": "Request method error! Please try again later",
-    "errMsg408": "Request timed out! Please try again later",
-    "errMsg500": "Service exception!",
-    "errMsg501": "Network not implemented!",
-    "errMsg502": "Network error!",
-    "errMsg503": "Service unavailable, server temporarily overloaded or under maintenance!",
-    "errMsg504": "Network timeout!",
-    "errMsgDefault": "Request failed!"
   }
 }
