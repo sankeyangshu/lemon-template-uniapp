@@ -4,11 +4,36 @@ export default defineUniPages({
   globalStyle: {
     navigationStyle: 'default',
     navigationBarTitleText: 'Lemon-Template-UniApp',
-    navigationBarBackgroundColor: '#f8f8f8',
-    navigationBarTextStyle: 'black',
-    backgroundColor: '#FFFFFF',
+    navigationBarBackgroundColor: '@navBgColor',
+    navigationBarTextStyle: '@navTxtStyle',
+    backgroundColor: '@bgColor',
+    backgroundTextStyle: '@bgTxtStyle',
+    backgroundColorTop: '@bgColorTop',
+    backgroundColorBottom: '@bgColorBottom',
     h5: {
       navigationStyle: 'custom',
     },
+  },
+  tabBar: {
+    color: '@tabColor',
+    selectedColor: '@tabSelectedColor',
+    backgroundColor: '@tabBgColor',
+    borderStyle: '@tabBorderStyle',
+    height: '50px',
+    custom: true,
+    list: [
+      {
+        pagePath: 'pages/home/index',
+        text: '首页',
+      },
+      {
+        pagePath: 'pages/example/index',
+        text: '示例',
+      },
+      {
+        pagePath: 'pages/mine/index',
+        text: '我的',
+      },
+    ],
   },
 });

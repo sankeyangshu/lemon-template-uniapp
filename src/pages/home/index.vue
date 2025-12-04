@@ -50,6 +50,8 @@ defineOptions({
 
 definePage({
   type: 'home',
+  name: 'home',
+  layout: 'tabbar',
   style: {
     navigationBarTitleText: '首页',
   },

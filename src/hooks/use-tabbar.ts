@@ -1,44 +1,44 @@
 import { computed, ref } from 'vue';
+import { i18n } from '@/locale';
 
-export interface TabbarItemType {
+export interface TabbarItem {
   name: string;
-  value?: number | null;
+  value?: number;
   active: boolean;
   title: string;
   icon: string;
-  pagePath: string;
 }
 
-const tabbarItems = ref<TabbarItemType[]>([
+const tabbarItems = ref<TabbarItem[]>([
   {
     icon: 'home',
-    pagePath: '/pages/home/index',
     title: '首页',
     name: 'home',
     active: true,
   },
   {
     icon: 'a-controlplatform',
-    pagePath: '/pages/example/index',
     title: '示例',
     name: 'example',
     active: false,
   },
   {
     icon: 'user',
-    pagePath: '/pages/mine/index',
     title: '我的',
     name: 'mine',
     active: false,
   },
 ]);
 
-export const useTabbar = () => {
+export function useTabbar() {
   /**
    * tabbar列表
    */
   const tabbarList = computed(() => {
-    return tabbarItems.value;
+    return tabbarItems.value.map((item) => ({
+      ...item,
+      title: i18n.global.t(`route.${item.name}`),
+    }));
   });
 
   /**
@@ -92,4 +92,4 @@ export const useTabbar = () => {
     setTabbarItem,
     setTabbarItemActive,
   };
-};
+}

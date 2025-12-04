@@ -77,6 +77,8 @@ export default defineManifestConfig({
     mergeVirtualHostAttributes: true,
     usingComponents: true,
     // __usePrivacyCheck__: true,
+    darkmode: true,
+    themeLocation: 'theme.json',
   },
   'mp-alipay': {
     usingComponents: true,
@@ -91,6 +93,8 @@ export default defineManifestConfig({
     router: {
       base: VITE_APP_PUBLIC_BASE,
     },
+    darkmode: true,
+    themeLocation: 'theme.json',
   },
   'uniStatistics': {
     enable: false,

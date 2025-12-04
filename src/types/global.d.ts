@@ -11,7 +11,7 @@ declare module '@uni-helper/vite-plugin-uni-pages' {
      *
      * 当前属性供 https://github.com/uni-helper/vite-plugin-uni-layouts 插件使用
      */
-    layout?: 'default';
+    layout?: 'default' | 'tabbar';
   }
 }
 

@@ -19,7 +19,7 @@
       "@uni-helper/vite-plugin-uni-pages",
       "@mini-types/alipay",
       "miniprogram-api-typings",
-      "wot-design-uni/global.d.ts"
+      "wot-design-uni/global"
     ],
     "allowImportingTsExtensions": true,
     "strict": true,
@@ -33,10 +33,9 @@
   "include": [
     "build/**/*.ts",
     "src/**/*.ts",
+    "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.jsx",
     "src/**/*.vue",
-    "**/*.d.ts",
     "*.config.ts"
   ],
   "exclude": ["node_modules", "dist"],
