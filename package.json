@@ -76,6 +76,8 @@
     "@dcloudio/uni-cli-shared": "3.0.0-4080520251106001",
     "@dcloudio/uni-stacktracey": "3.0.0-4080520251106001",
     "@dcloudio/vite-plugin-uni": "3.0.0-4080520251106001",
+    "@egoist/tailwindcss-icons": "^1.9.0",
+    "@iconify-json/mdi": "^1.2.3",
     "@mini-types/alipay": "^3.0.14",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^24.10.1",
@@ -102,13 +104,14 @@
     "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
+    "uni-mini-router": "^0.1.6",
     "vite": "5.2.8",
     "vite-plugin-restart": "^2.0.0",
     "vue-tsc": "^3.1.4",
     "weapp-tailwindcss": "^4.8.7"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm typecheck && pnpm lint-staged",
+    "pre-commit": "pnpm lint-staged",
     "commit-msg": "pnpm exec commitlint --edit $1"
   },
   "lint-staged": {

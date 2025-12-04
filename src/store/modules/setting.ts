@@ -4,6 +4,21 @@ import { ref } from 'vue';
 
 type ThemeMode = 'light' | 'dark';
 
+/**
+ * 预定义主题颜色
+ */
+export const PRIMARY_COLORS = [
+  '#009688',
+  '#daa96e',
+  '#0c819f',
+  '#27ae60',
+  '#ff5c93',
+  '#e74c3c',
+  '#fd726d',
+  '#f39c12',
+  '#9b59b6',
+];
+
 export const useSettingStore = defineStore(
   'settingState',
   () => {
@@ -13,7 +28,11 @@ export const useSettingStore = defineStore(
 
     const userPreferredTheme = ref<ThemeMode>('light'); // 用户上一次手动选择的主题
 
-    const themeVars = ref<ConfigProviderThemeVars>();
+    const themeColor = ref(PRIMARY_COLORS[0]); // 主题颜色
+
+    const themeVars = ref<ConfigProviderThemeVars>({
+      colorTheme: themeColor.value,
+    });
 
     /**
      * 设置导航栏颜色
@@ -49,6 +68,19 @@ export const useSettingStore = defineStore(
       initTheme();
     };
 
+    /**
+     * 设置主题颜色
+     * @param color 主题颜色
+     */
+    function setThemeColor(color: string) {
+      themeColor.value = color;
+      themeVars.value.colorTheme = color;
+    };
+
+    /**
+     * 设置主题变量
+     * @param value 主题变量
+     */
     function setThemeVars(value: ConfigProviderThemeVars) {
       themeVars.value = value;
     };
@@ -96,10 +128,12 @@ export const useSettingStore = defineStore(
       theme,
       followSystem,
       userPreferredTheme,
+      themeColor,
       themeVars,
       setNavigationBarColor,
       setThemeMode,
       setFollowSystem,
+      setThemeColor,
       setThemeVars,
       initTheme,
     };

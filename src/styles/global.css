@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @source not "dist";
 
+@plugin '@egoist/tailwindcss-icons' {
+  scale: 1.2;
+}
+
 @custom-variant dark (.dark &);
 
 :root {
@@ -10,7 +14,7 @@
 
 .dark {
   --app-color-text: #f5f5f5;
-  --app-color-background: #141414;
+  --app-color-background: #181818;
 }
 
 @theme inline {
