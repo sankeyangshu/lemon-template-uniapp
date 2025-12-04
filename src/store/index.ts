@@ -1,6 +1,6 @@
+import type { App } from 'vue';
 import { createPinia } from 'pinia';
 import { createPersistedState } from 'pinia-plugin-persistedstate'; // 引入持久化插件
-import type { App } from 'vue';
 
 /**
  * 创建pinia实例
@@ -14,7 +14,7 @@ store.use(
       getItem: uni.getStorageSync,
       setItem: uni.setStorageSync,
     },
-  })
+  }),
 );
 
 /**

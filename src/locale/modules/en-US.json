@@ -66,8 +66,9 @@
     "systemVersion": "System Version",
     "projectDocs": "Project Documentation"
   },
-  "themeSetting": {
+  "settings": {
     "themeMode": "Theme Mode",
-    "systemTheme": "System Theme Color"
+    "systemTheme": "System Theme Color",
+    "followSystem": "Follow System"
   }
 }

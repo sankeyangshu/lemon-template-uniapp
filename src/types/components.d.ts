@@ -11,9 +11,14 @@ declare module 'vue' {
     WdCell: typeof import('wot-design-uni/components/wd-cell/wd-cell.vue')['default']
     WdCellGroup: typeof import('wot-design-uni/components/wd-cell-group/wd-cell-group.vue')['default']
     WdConfigProvider: typeof import('wot-design-uni/components/wd-config-provider/wd-config-provider.vue')['default']
+    WdDivider: typeof import('wot-design-uni/components/wd-divider/wd-divider.vue')['default']
     WdIcon: typeof import('wot-design-uni/components/wd-icon/wd-icon.vue')['default']
+    WdImg: typeof import('wot-design-uni/components/wd-img/wd-img.vue')['default']
     WdMessageBox: typeof import('wot-design-uni/components/wd-message-box/wd-message-box.vue')['default']
+    WdPicker: typeof import('wot-design-uni/components/wd-picker/wd-picker.vue')['default']
     WdSwitch: typeof import('wot-design-uni/components/wd-switch/wd-switch.vue')['default']
+    WdTabbar: typeof import('wot-design-uni/components/wd-tabbar/wd-tabbar.vue')['default']
+    WdTabbarItem: typeof import('wot-design-uni/components/wd-tabbar-item/wd-tabbar-item.vue')['default']
     WdToast: typeof import('wot-design-uni/components/wd-toast/wd-toast.vue')['default']
   }
 }

@@ -1,63 +1,47 @@
-<route lang="json5">
-{
-  layout: 'tabbar',
-  name: 'example',
-  style: {
-    navigationBarTitleText: '示例',
-  },
-}
-</route>
-
 <template>
-  <view class="box-border w-full p-40rpx">
-    <div class="mb-24rpx mt-8rpx text-32rpx font-bold">
+  <view
+    class="
+      box-border w-full p-4 text-black
+      dark:text-white
+    "
+  >
+    <view class="mb-3 text-lg font-bold">
       {{ $t('example.basicSetting') }}
-    </div>
-
+    </view>
     <wd-cell-group border>
-      <wd-cell :title="`🌓 ${$t('example.darkMode')}`" value="内容">
+      <wd-cell :title="`🌓 ${$t('example.darkMode')}`">
         <switch-dark />
       </wd-cell>
       <wd-picker
-        v-model="currentLanguage"
+        v-model="language"
         :label="`📚 ${$t('example.language')}`"
         align-right
         :columns="languageColumns"
-        @confirm="onConfirmLanguage"
       />
-    </wd-cell-group>
-
-    <div class="mb-24rpx mt-60rpx text-32rpx font-bold">
-      {{ $t('example.exampleComponent') }}
-    </div>
-    <wd-cell-group border>
-      <template v-for="item in menuItems" :key="item.route">
-        <wd-cell :title="item.title" :to="item.route" is-link />
-      </template>
     </wd-cell-group>
   </view>
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { language } from '@/locales';
+import { language } from '@/locale';
 
-const { t } = useI18n();
+defineOptions({
+  name: 'Example',
+});
 
-const menuItems = computed(() => [{ title: `🎨 ${t('route.icon')}`, route: 'icon' }]);
+definePage({
+  name: 'example',
+  layout: 'tabbar',
+  style: {
+    navigationBarTitleText: '示例',
+  },
+});
 
 // 语言选项
 const languageColumns = [
   { label: '简体中文', value: 'zh-CN' },
   { label: 'English', value: 'en-US' },
 ];
-
-const currentLanguage = ref(language.value);
-
-const onConfirmLanguage = ({ value }: { value: string }) => {
-  language.value = value;
-};
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

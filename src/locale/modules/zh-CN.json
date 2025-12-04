@@ -66,9 +66,10 @@
     "systemVersion": "系统版本",
     "projectDocs": "项目文档"
   },
-  "themeSetting": {
+  "settings": {
     "themeMode": "主题模式",
-    "systemTheme": "系统主题色"
+    "systemTheme": "系统主题色",
+    "followSystem": "跟随系统"
   }
 
 }
