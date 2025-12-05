@@ -8,16 +8,19 @@
 @custom-variant dark (.dark &);
 
 :root {
+  --app-color-primary: #009688;
   --app-color-text: #323233;
   --app-color-background: #f1f2f5;
 }
 
 .dark {
+  --app-color-primary: #009688;
   --app-color-text: #f5f5f5;
   --app-color-background: #181818;
 }
 
 @theme inline {
+  --color-primary: var(--app-color-primary);
   --color-text: var(--app-color-text);
   --color-background: var(--app-color-background);
 }

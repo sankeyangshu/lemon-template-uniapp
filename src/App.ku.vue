@@ -1,8 +1,10 @@
 <template>
   <wd-config-provider
-    :theme="theme" :theme-vars="themeVars" :custom-class="theme" class="
-      box-border min-h-[calc(100vh-var(--window-top))] bg-background
-    "
+    :theme="theme"
+    :theme-vars="themeVars"
+    :custom-class="theme"
+    :style="cssVars"
+    class="box-border min-h-[calc(100vh-var(--window-top))] bg-background"
   >
     <KuRootView />
     <wd-toast />
@@ -13,12 +15,17 @@
 <script lang="ts" setup>
 import { onShow } from '@dcloudio/uni-app';
 import { storeToRefs } from 'pinia';
-import { onBeforeMount, onUnmounted } from 'vue';
+import { computed, onBeforeMount, onUnmounted } from 'vue';
 import { useSettingStore } from '@/store/modules/setting';
 
 const settingStore = useSettingStore();
-const { theme, themeVars, followSystem } = storeToRefs(settingStore);
+const { theme, themeVars, followSystem, themeColor } = storeToRefs(settingStore);
 let themeChangeHandler: UniApp.OnThemeChangeCallback | null = null;
+
+// 计算 CSS 变量
+const cssVars = computed(() => ({
+  '--app-color-primary': themeColor.value,
+}));
 
 onBeforeMount(() => {
   settingStore.initTheme();
