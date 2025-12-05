@@ -23,7 +23,7 @@
 
 ## 简介
 
-🚀🚀🚀 **lemon-template-uniapp** 使用了最新的`Uniapp`、`Vue3`、`Vite6`、`wot-ui`、`Pinia`、`Typescript`、`UnoCSS`等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色等功能。
+🚀🚀🚀 **lemon-template-uniapp** 使用了最新的`Uniapp`、`Vue3`、`Vite`、`uni-helper`、`wot-ui`、`Pinia`、`Typescript`、`TailwindCSS`等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色等功能。
 
 你可以在此之上直接开发你的业务代码！希望你能喜欢。👋👋👋
 
@@ -38,12 +38,13 @@
 ## 项目功能
 
 - ⚡️ 使用 Vue3 + TypeScript 开发，单文件组件**＜ script setup ＞**
-- ✨ 采用 Vite6 作为项目开发、打包工具
+- ✨ 采用 Vite 作为项目开发、打包工具
 - 🍕 整个项目集成了 TypeScript
 - 🍍 使用 Pinia 替代 Vuex，轻量、简单、易用，集成 Pinia 持久化插件
 - 📦 组件自动化加载
+- 🔄 uni-helper 增强 uni-app 的开发体验
 - 🎨 wot-ui 组件库
-- 🌀 UnoCSS 即时原子化 CSS 引擎
+- 🌀 TailwindCSS 即时原子化 CSS 引擎
 - 👏 集成多种图标方案
 - 🌓 支持深色模式
 - 🌍 多语言国际化，支持 i18n国际化方案
@@ -62,7 +63,8 @@
 - [TypeScript](https://www.typescriptlang.org/) - 熟悉 `TypeScript` 基本语法
 - [Vue-Router](https://router.vuejs.org/) - 熟悉 `Vue-Router`基本使用
 - [Icones](https://icones.js.org/) - 本项目推荐图标库
-- [UnoCSS](https://github.com/antfu/unocss) - 高性能且极具灵活性的即时原子化 CSS 引擎
+- [Tailwind CSS](https://tailwindcss.com/) - 高性能且极具灵活性的即时原子化 CSS 引擎
+- [uni-helper](https://uni-helper.js.org/) 增强 uni-app 的开发体验
 - [wot-ui](https://wot-design-uni.pages.dev/) - 移动端 wot-ui 组件库
 - [Es6+](http://es6.ruanyifeng.com/) - 熟悉 `ES6` 基本语法
 
@@ -78,7 +80,7 @@
 如果你使用的 IDE 是[vscode](https://code.visualstudio.com/)(推荐)的话，可以安装以下工具来提高开发效率及代码格式化
 
 - [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - vue 开发必备
-- [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) - UnoCSS 提示插件
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - Tailwind CSS 提示插件
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) - `.env` 文件 高亮
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - 更好的错误定位
 - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) - 不同 IDE 维护一致的编码样式
@@ -91,7 +93,10 @@
 
 ### 使用脚手架
 
-> 开发中
+```bash
+# 复制命令 - project 为你的项目名称
+pnpm create lemon project -t lemon-uniapp
+```
 
 ### GitHub 模板
 
@@ -109,23 +114,17 @@ cd lemon-template-uniapp
 # 安装依赖 - 推荐使用pnpm
 pnpm install
 
-# 选择合适的平台启动服务，例如微信小程序
-pnpm dev:mp-weixin
+# 选择合适的平台启动服务，默认微信小程序
+pnpm dev
 
-# 选择合适的平台打包发布，例如微信小程序
-pnpm build:mp-weixin
-
-# 选择合适的平台启动服务，例如支付宝小程序
-# pnpm dev:mp-alipay
-
-# 选择合适的平台打包发布，例如支付宝小程序
-# pnpm build:mp-alipay
+# 选择合适的平台打包发布，默认微信小程序
+pnpm build
 
 # 选择合适的平台启动服务，例如 H5
-# pnpm dev:h5
+# pnpm dev h
 
 # 选择合适的平台打包发布，例如 H5
-# pnpm build:h5
+# pnpm build h
 ```
 
 ## Git 提交规范
