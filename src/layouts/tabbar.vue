@@ -26,6 +26,12 @@ import { useRoute, useRouter } from 'uni-mini-router';
 import { nextTick, onMounted } from 'vue';
 import { useTabbar } from '@/hooks/use-tabbar';
 
+defineOptions({
+  addGlobalClass: true,
+  virtualHost: true,
+  styleIsolation: 'shared',
+});
+
 const router = useRouter();
 const route = useRoute();
 
