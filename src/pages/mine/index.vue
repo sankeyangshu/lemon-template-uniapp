@@ -1,16 +1,5 @@
-<route lang="json5">
-{
-  layout: 'tabbar',
-  name: 'mine',
-  style: {
-    navigationBarTitleText: '我的',
-    navigationStyle: 'custom',
-  },
-}
-</route>
-
 <template>
-  <view class="wh-full">
+  <view class="size-full text-text">
     <wd-img
       width="100%"
       mode="widthFix"
@@ -18,46 +7,47 @@
     />
 
     <view
-      class="relative mx-32rpx mb-20rpx flex-y-center rounded-20rpx bg-[--color-background-2] p-30rpx -mt-90rpx"
+      class="
+        relative mx-4 -mt-10 mb-2.5 flex items-center rounded-lg bg-white p-4
+        dark:bg-[#1C1C1E]
+      "
     >
       <wd-img
         :width="50"
         :height="50"
         round
-        src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+        :src="isLogin ? userInfo?.avatar : 'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg'"
       />
-      <view v-if="!isLogin" class="ml-20rpx flex-1" @click="onClickLogin">
-        <view class="mb-4rpx text-40rpx">{{ $t('login.login') }}/{{ $t('login.register') }}</view>
+      <view v-if="!isLogin" class="ml-2.5 flex-1">
+        <view class="ml-2.5 flex-1 text-xl" @click="onClickLogin">
+          {{ $t('login.login') }}
+        </view>
       </view>
-      <view v-else class="ml-20rpx flex-1">
-        <view class="mb-4rpx text-40rpx">三棵杨树</view>
-        <view class="truncate text-28rpx color-[--color-text]">
-          从来没有真正的绝境，只有心灵的迷途
+      <view v-else class="ml-2.5 flex-1">
+        <view class="mb-0.5 text-xl">
+          {{ userInfo?.nickname }}
+        </view>
+        <view class="truncate text-sm">
+          {{ userInfo?.sign }}
         </view>
       </view>
     </view>
 
-    <view class="my-32rpx px-32rpx">
+    <view class="box-border px-4">
       <wd-cell-group border>
-        <wd-cell :title="$t('route.themeSetting')" is-link to="/pages/themeSetting/index">
+        <wd-cell :title="$t('route.themeSetting')" is-link to="/pages/mine/settings">
           <template #icon>
-            <view class="leading-48rpx">
-              <view class="i-mdi-palette mr-10rpx text-36rpx"></view>
-            </view>
+            <view class="mr-2.5 i-mdi-palette text-xl" />
           </template>
         </wd-cell>
         <wd-cell :title="$t('mine.projectDocs')" is-link @click="onClickOpenDocs">
           <template #icon>
-            <view class="leading-48rpx">
-              <view class="i-mdi-book-open-variant mr-10rpx text-36rpx"></view>
-            </view>
+            <view class="mr-2.5 i-mdi-book-open-variant text-xl" />
           </template>
         </wd-cell>
         <wd-cell v-if="isLogin" :title="$t('mine.logout')" is-link @click="onClickLogout">
           <template #icon>
-            <view class="leading-48rpx">
-              <view class="i-mdi-logout mr-10rpx text-36rpx"></view>
-            </view>
+            <view class="mr-2.5 i-mdi-logout text-xl" />
           </template>
         </wd-cell>
       </wd-cell-group>
@@ -66,20 +56,34 @@
 </template>
 
 <script lang="ts" setup>
-import { useRouter } from 'uni-mini-router';
-import { computed } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useI18n } from 'vue-i18n';
+import { useMessage } from 'wot-design-uni';
 import { useUserStore } from '@/store/modules/user';
 
+defineOptions({
+  name: 'Mine',
+});
+
+definePage({
+  name: 'mine',
+  layout: 'tabbar',
+  style: {
+    navigationBarTitleText: '我的',
+    navigationStyle: 'custom',
+  },
+});
+
 const userStore = useUserStore();
-const isLogin = computed(() => !!userStore.userState.token);
+const { isLogin, userInfo } = storeToRefs(userStore);
 
-const router = useRouter();
+function onClickLogin() {
+  uni.navigateTo({
+    url: '/pages/auth/login',
+  });
+}
 
-const onClickLogin = () => {
-  router.push('/pages/login/index');
-};
-
-const onClickOpenDocs = () => {
+function onClickOpenDocs() {
   uni.setClipboardData({
     data: 'https://sankeyangshu.github.io/lemon-template-docs/uniapp/',
     success: () => {
@@ -89,19 +93,21 @@ const onClickOpenDocs = () => {
       });
     },
   });
-};
+}
 
-const onClickLogout = () => {
-  uni.showModal({
-    title: '提示',
-    content: '确定退出登录吗？',
-    success(res) {
-      if (res.confirm) {
-        userStore.logout();
-      }
-    },
-  });
-};
+const message = useMessage();
+const { t } = useI18n();
+
+function onClickLogout() {
+  message
+    .confirm({
+      msg: t('mine.logoutTips'),
+      title: t('mine.tips'),
+    })
+    .then(() => {
+      userStore.logout();
+    })
+    .catch(() => {
+    });
+}
 </script>
-
-<style lang="scss" scoped></style>

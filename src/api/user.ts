@@ -1,25 +1,25 @@
-import http from '@/utils/request';
+import { http } from '@/utils/request';
 
 /**
  * 登录请求参数类型
  */
-export type loginDataType = {
+export interface LoginData {
   username: string;
   password: string;
-};
+}
 
 /**
  * 登录返回参数类型
  */
-export interface userInfoRepType {
-  user: userInfoType;
+export interface LoginResponse {
+  user: UserInfo;
   token: string;
 }
 
 /**
  * 用户信息类型
  */
-export interface userInfoType {
+export interface UserInfo {
   id: number;
   username: string;
   phone: string;
@@ -47,6 +47,6 @@ export function getExampleAPI() {
  * @param data 登录请求参数
  * @returns 登录结果
  */
-export function postLoginAPI(data: loginDataType) {
-  return http.post<userInfoRepType>(api.login, data);
+export function postLoginAPI(data: LoginData) {
+  return http.post<LoginResponse>(api.login, data);
 }
