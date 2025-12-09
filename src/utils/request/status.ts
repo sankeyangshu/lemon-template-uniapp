@@ -1,86 +1,18 @@
-import { i18n } from '@/locales';
-import { useUserStore } from '@/store/modules/user';
-
 /**
- * 校验网络请求状态码
- * @param {number} status 状态码
- * @param {string | string[]} message 错误提示信息
+ * 接口状态码
  */
-export const checkStatus = (status: number, message?: string | Array<string>): void => {
-  const userStore = useUserStore();
-
-  let errMsg = ''; // 错误提示信息
-  if (message) {
-    errMsg = typeof message === 'string' ? message : message[0];
-  }
-
-  switch (status) {
-    case 400:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg400'),
-      });
-      break;
-    case 401:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg401'),
-      });
-      // 退出登录
-      userStore.logout();
-      break;
-    case 403:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg403'),
-      });
-      break;
-    case 404:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg404'),
-      });
-      break;
-    case 405:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg405'),
-      });
-      break;
-    case 408:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg408'),
-      });
-      break;
-    case 500:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg500'),
-      });
-      break;
-    case 502:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg502'),
-      });
-      break;
-    case 503:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg503'),
-      });
-      break;
-    case 504:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsg504'),
-      });
-      break;
-    default:
-      uni.showToast({
-        icon: 'none',
-        title: errMsg || i18n.global.t('api.errMsgDefault'),
-      });
-  }
-};
+export const ApiStatus = {
+  success: 200, // 成功
+  error: 400, // 错误
+  unauthorized: 401, // 未授权
+  forbidden: 403, // 禁止访问
+  notFound: 404, // 未找到
+  methodNotAllowed: 405, // 方法不允许
+  requestTimeout: 408, // 请求超时
+  internalServerError: 500, // 服务器错误
+  notImplemented: 501, // 未实现
+  badGateway: 502, // 网关错误
+  serviceUnavailable: 503, // 服务不可用
+  gatewayTimeout: 504, // 网关超时
+  httpVersionNotSupported: 505, // HTTP版本不支持
+} as const;
