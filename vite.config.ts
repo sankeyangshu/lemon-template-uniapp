@@ -46,5 +46,11 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
       // 使用 esbuild 压缩 剔除 console 和 debugger
       drop: viteEnv.VITE_DROP_CONSOLE ? ['console', 'debugger'] : [],
     },
+
+    build: {
+      target: 'es6',
+      // 开发环境不用压缩
+      minify: mode === 'development' ? false : 'esbuild',
+    },
   };
 });
