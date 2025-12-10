@@ -1,5 +1,6 @@
 import type { ResponseData } from '@/utils/request';
 import { ref } from 'vue';
+import { i18n } from '@/locale';
 import { HttpError } from '@/utils/request/error';
 import { ApiStatus } from '@/utils/request/status';
 
@@ -93,7 +94,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
    */
   const validateFile = (file: FileInfo) => {
     if (file.size > maxSize) {
-      const errorMsg = `文件大小不能超过 ${(maxSize / 1024 / 1024).toFixed(2)}MB`;
+      const errorMsg = i18n.global.t('upload.fileSizeExceeded', { size: (maxSize / 1024 / 1024).toFixed(2) });
       uni.showToast({
         title: errorMsg,
         icon: 'none',
@@ -111,7 +112,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
       );
 
       if (!isValid) {
-        const errorMsg = `仅支持 ${accept.join(', ')} 格式`;
+        const errorMsg = i18n.global.t('upload.fileFormatNotSupported', { formats: accept.join(', ') });
         uni.showToast({ title: errorMsg, icon: 'none' });
         throw new HttpError(errorMsg, ApiStatus.error);
       }
@@ -138,7 +139,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
             resolve(files);
           },
           fail: (err) => {
-            const error = new HttpError(err.errMsg || '选择图片失败', ApiStatus.error);
+            const error = new HttpError(err.errMsg || i18n.global.t('upload.selectImageFailed'), ApiStatus.error);
             reject(error);
           },
         });
@@ -158,7 +159,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
             resolve(files);
           },
           fail: (err) => {
-            const error = new HttpError(err.errMsg || '选择文件失败', ApiStatus.error);
+            const error = new HttpError(err.errMsg || i18n.global.t('upload.selectFileFailed'), ApiStatus.error);
             reject(error);
           },
         });
@@ -186,7 +187,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
             // 检查 HTTP 状态码
             if (res.statusCode !== 200) {
               const error = new HttpError(
-                `上传失败，状态码: ${res.statusCode}`,
+                i18n.global.t('upload.uploadFailedWithStatus', { status: res.statusCode }),
                 res.statusCode,
                 { url, method: 'UPLOAD' },
               );
@@ -202,7 +203,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
             // 检查业务状态码
             if (responseData.code !== ApiStatus.success) {
               const error = new HttpError(
-                responseData.message || '上传失败',
+                responseData.message || i18n.global.t('upload.uploadFailed'),
                 responseData.code,
                 { data: responseData, url, method: 'UPLOAD' },
               );
@@ -214,7 +215,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
             resolve(responseData.data as UploadResultData);
           } catch (err) {
             const error = new HttpError(
-              err instanceof Error ? err.message : '数据解析错误',
+              err instanceof Error ? err.message : i18n.global.t('upload.dataParseError'),
               ApiStatus.error,
               { url, method: 'UPLOAD' },
             );
@@ -223,7 +224,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
         },
         fail: (err) => {
           const error = new HttpError(
-            err.errMsg || '上传失败',
+            err.errMsg || i18n.global.t('upload.uploadFailed'),
             ApiStatus.error,
             { url, method: 'UPLOAD' },
           );
@@ -259,7 +260,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
         const error = err instanceof HttpError
           ? err
           : new HttpError(
-              err instanceof Error ? err.message : '上传失败',
+              err instanceof Error ? err.message : i18n.global.t('upload.uploadFailed'),
               ApiStatus.error,
             );
         errors.push(error);
@@ -306,7 +307,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
 
       if (validFiles.length === 0) {
         loading.value = false;
-        const noValidFilesError = new HttpError('没有有效的文件可上传', ApiStatus.error);
+        const noValidFilesError = new HttpError(i18n.global.t('upload.noValidFiles'), ApiStatus.error);
         error.value = noValidFilesError;
         onError?.(noValidFilesError);
         return;
@@ -320,7 +321,7 @@ export function useUpload<T extends Media>(options: UseUploadOptions<T> = {}) {
       const currentError = err instanceof HttpError
         ? err
         : new HttpError(
-            err instanceof Error ? err.message : '上传失败',
+            err instanceof Error ? err.message : i18n.global.t('upload.uploadFailed'),
             ApiStatus.error,
           );
       error.value = currentError;

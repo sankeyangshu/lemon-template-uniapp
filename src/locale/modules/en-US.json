@@ -61,14 +61,29 @@
   },
   "mine": {
     "logoutTips": "Are you sure you want to log out?",
-    "tips": "Tips",
     "logout": "Log Out",
     "systemVersion": "System Version",
-    "projectDocs": "Project Docs"
+    "projectDocs": "Project Docs",
+    "linkCopied": "Link copied to clipboard"
   },
   "settings": {
+    "tips": "Tips",
     "themeMode": "Theme Mode",
     "systemTheme": "System Theme Color",
-    "followSystem": "Follow System"
+    "followSystem": "Follow System",
+    "updateTitle": "Update Notification",
+    "newVersionReady": "New version is ready, the app will restart now",
+    "newVersionDownloadFailed": "New version download failed",
+    "lowVersionWarning": "Your WeChat version is too low and may not support this feature. Please upgrade to the latest version and try again."
+  },
+  "upload": {
+    "fileSizeExceeded": "File size cannot exceed {size} MB",
+    "fileFormatNotSupported": "Only {formats} formats are supported",
+    "selectImageFailed": "Failed to select image",
+    "selectFileFailed": "Failed to select file",
+    "uploadFailed": "Upload failed",
+    "uploadFailedWithStatus": "Upload failed, status code: {status}",
+    "dataParseError": "Data parse error",
+    "noValidFiles": "No valid files to upload"
   }
 }

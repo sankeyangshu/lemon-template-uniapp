@@ -61,15 +61,29 @@
   },
   "mine": {
     "logoutTips": "确定要退出登录吗？",
-    "tips": "温馨提示",
     "logout": "退出登录",
     "systemVersion": "系统版本",
-    "projectDocs": "项目文档"
+    "projectDocs": "项目文档",
+    "linkCopied": "链接已复制到剪贴板"
   },
   "settings": {
+    "tips": "温馨提示",
     "themeMode": "主题模式",
     "systemTheme": "系统主题色",
-    "followSystem": "跟随系统"
+    "followSystem": "跟随系统",
+    "updateTitle": "更新提示",
+    "newVersionReady": "新版本已经准备好，即将重启应用",
+    "newVersionDownloadFailed": "新版本下载失败",
+    "lowVersionWarning": "当前微信版本过低，可能无法使用该功能，请升级到最新版本后重试。"
+  },
+  "upload": {
+    "fileSizeExceeded": "文件大小不能超过 {size} MB",
+    "fileFormatNotSupported": "仅支持 {formats} 格式",
+    "selectImageFailed": "选择图片失败",
+    "selectFileFailed": "选择文件失败",
+    "uploadFailed": "上传失败",
+    "uploadFailedWithStatus": "上传失败，状态码: {status}",
+    "dataParseError": "数据解析错误",
+    "noValidFiles": "没有有效的文件可上传"
   }
-
 }

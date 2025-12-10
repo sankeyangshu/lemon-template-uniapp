@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { onHide, onLaunch, onShow } from '@dcloudio/uni-app';
+import { AppVersionNotification } from './utils';
 
 onLaunch(() => {
-  // eslint-disable-next-line no-console
-  console.log('App Launch');
+  // #ifdef MP-WEIXIN
+  AppVersionNotification();
+  // #endif
 });
 onShow(() => {
   // eslint-disable-next-line no-console
