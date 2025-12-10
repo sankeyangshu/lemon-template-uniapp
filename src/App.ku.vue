@@ -9,6 +9,10 @@
     <KuRootView />
     <wd-toast />
     <wd-message-box />
+
+    <!-- #ifdef MP-WEIXIN -->
+    <privacy-popup />
+    <!-- #endif -->
   </wd-config-provider>
 </template>
 
