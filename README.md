@@ -1,6 +1,6 @@
 <div align="center">
 <a href="https://github.com/sankeyangshu/lemon-template-uniapp">
-  <img alt="Lemon-Template-Uniapp" width="200" height="200" src="./src/static/logo.svg">
+  <img alt="Lemon-Template-Uniapp" width="200" height="200" src="./src/static/svg-icon/logo.svg">
 </a>
 
 <h1 align="center">
