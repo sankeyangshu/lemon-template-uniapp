@@ -3,7 +3,7 @@ import { defineUniPages } from '@uni-helper/vite-plugin-uni-pages';
 export default defineUniPages({
   globalStyle: {
     navigationStyle: 'default',
-    navigationBarTitleText: 'Lemon-Template-UniApp',
+    navigationBarTitleText: 'Lemon-Mobile-UniApp',
     navigationBarBackgroundColor: '@navBgColor',
     navigationBarTextStyle: '@navTxtStyle',
     backgroundColor: '@bgColor',

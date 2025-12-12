@@ -1,26 +1,27 @@
 {
-  "name": "lemon-template-uniapp",
+  "name": "lemon-mobile-uniapp",
   "type": "module",
   "version": "0.2.0",
   "private": true,
-  "packageManager": "pnpm@10.24.0",
-  "description": "An mobile web apps template based on the UniApp ecosystem",
+  "packageManager": "pnpm@10.25.0",
+  "description": "A mobile app template based on the UniApp ecosystem",
   "author": {
     "name": "sankeyangshu",
     "email": "sankeyangshu@gmail.com",
     "url": "https://github.com/sankeyangshu"
   },
   "license": "MIT",
-  "homepage": "https://github.com/sankeyangshu/lemon-template-uniapp#readme",
+  "homepage": "https://github.com/sankeyangshu/lemon-mobile-uniapp#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sankeyangshu/lemon-template-uniapp.git"
+    "url": "git+https://github.com/sankeyangshu/lemon-mobile-uniapp.git"
   },
   "bugs": {
-    "url": "https://github.com/sankeyangshu/lemon-template-uniapp/issues"
+    "url": "https://github.com/sankeyangshu/lemon-mobile-uniapp/issues"
   },
   "keywords": [
     "uniapp",
+    "mobile",
     "templates",
     "typescript",
     "wot-design-uni",

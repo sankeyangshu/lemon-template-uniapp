@@ -1,20 +1,20 @@
 <div align="center">
-<a href="https://github.com/sankeyangshu/lemon-template-uniapp">
-  <img alt="Lemon-Template-Uniapp" width="200" height="200" src="./src/static/svg-icon/logo.svg">
+<a href="https://github.com/sankeyangshu/lemon-mobile-uniapp">
+  <img alt="Lemon-Mobile-Uniapp" width="200" height="200" src="./src/static/svg-icon/logo.svg">
 </a>
 
 <h1 align="center">
-  lemon-template-uniapp
+  Lemon-Mobile-UniApp
 </h1>
 
-一个基于 Uniapp 生态系统的移动小程序应用模板。
+一个基于 UniApp 生态系统的移动小程序应用模板。
 
 <p >
-  <img src="https://img.shields.io/github/license/sankeyangshu/lemon-template-uniapp" alt="license" />
-  <img src="https://img.shields.io/github/package-json/v/sankeyangshu/lemon-template-uniapp" alt="version" />
-  <img src="https://img.shields.io/github/languages/top/sankeyangshu/lemon-template-uniapp" alt="languages" />
-  <img src="https://img.shields.io/github/repo-size/sankeyangshu/lemon-template-uniapp" alt="repo-size" />
-  <img src="https://img.shields.io/github/issues-closed/sankeyangshu/lemon-template-uniapp" alt="issues" />
+  <img src="https://img.shields.io/github/license/sankeyangshu/lemon-mobile-uniapp" alt="license" />
+  <img src="https://img.shields.io/github/package-json/v/sankeyangshu/lemon-mobile-uniapp" alt="version" />
+  <img src="https://img.shields.io/github/languages/top/sankeyangshu/lemon-mobile-uniapp" alt="languages" />
+  <img src="https://img.shields.io/github/repo-size/sankeyangshu/lemon-mobile-uniapp" alt="repo-size" />
+  <img src="https://img.shields.io/github/issues-closed/sankeyangshu/lemon-mobile-uniapp" alt="issues" />
 </p>
 
 </div>
@@ -23,7 +23,7 @@
 
 ## 简介
 
-🚀🚀🚀 **lemon-template-uniapp** 使用了最新的`Uniapp`、`Vue3`、`Vite`、`uni-helper`、`wot-ui`、`Pinia`、`Typescript`、`TailwindCSS`等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色等功能。
+🚀🚀🚀 **Lemon-Mobile-UniApp** 使用了最新的`Uniapp`、`Vue3`、`Vite`、`uni-helper`、`wot-ui`、`Pinia`、`Typescript`、`TailwindCSS`等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色等功能。
 
 你可以在此之上直接开发你的业务代码！希望你能喜欢。👋👋👋
 
@@ -32,26 +32,26 @@
 
 ## 其他模版
 
-- [lemon-template-react](https://github.com/sankeyangshu/lemon-template-react) - 基于 React 生态系统的移动 web 应用模板
-- [lemon-template-vue](https://github.com/sankeyangshu/lemon-template-vue) - 基于 Vue3 生态系统的移动 web 应用模板
+- [lemon-mobile-react](https://github.com/sankeyangshu/lemon-mobile-react) - 基于 React 生态系统的移动 web 应用模板
+- [lemon-mobile-vue](https://github.com/sankeyangshu/lemon-mobile-vue) - 基于 Vue3 生态系统的移动 web 应用模板
 
 ## 项目功能
 
-- ⚡️ 使用 Vue3 + TypeScript 开发，单文件组件**＜ script setup ＞**
-- ✨ 采用 Vite 作为项目开发、打包工具
-- 🍕 整个项目集成了 TypeScript
-- 🍍 使用 Pinia 替代 Vuex，轻量、简单、易用，集成 Pinia 持久化插件
+- ⚡️ 使用 `Vue3` + `TypeScript` 开发，单文件组件**＜ script setup ＞**
+- ✨ 采用 `Vite` 作为项目开发、打包工具
+- 🍕 整个项目集成了 `TypeScript`
+- 🍍 使用 `Pinia` 替代 `Vuex`，轻量、简单、易用，集成 `Pinia` 持久化插件
 - 📦 组件自动化加载
-- 🔄 uni-helper 增强 uni-app 的开发体验
-- 🎨 wot-ui 组件库
-- 🌀 TailwindCSS 即时原子化 CSS 引擎
+- 🔄 `uni-helper` 增强 `uni-app` 的开发体验
+- 🎨 `wot-ui` 组件库
+- 🌀 `TailwindCSS` 即时原子化 CSS 引擎
 - 👏 集成多种图标方案
 - 🌓 支持深色模式
-- 🌍 多语言国际化，支持 i18n国际化方案
-- ⚙️ 使用 Vitest 进行单元测试
-- ☁️ Axios 封装
-- 💪 集成 Eslint 代码校验规范，并且该 Eslint 配置默认使用 Prettier 格式化代码，
-- 🌈 使用 simple-git-hooks、lint-staged、commitlint 规范提交信息
+- 🌍 多语言国际化，支持 `i18n` 国际化方案
+- ⚙️ 使用 `Vitest` 进行单元测试
+- ☁️ `Axios` 封装
+- 💪 集成 `Eslint` 代码校验规范，并且该 `Eslint` 配置默认使用 `Prettier` 格式化代码，
+- 🌈 使用 `simple-git-hooks`、`lint-staged``、commitlint` 规范提交信息
 
 ## 基础知识
 
@@ -95,21 +95,21 @@
 
 ```bash
 # 复制命令 - project 为你的项目名称
-pnpm create lemon project -t lemon-uniapp
+pnpm create lemon project -t mobile-uniapp
 ```
 
 ### GitHub 模板
 
-[使用这个模板创建仓库](https://github.com/sankeyangshu/lemon-template-uniapp/generate)
+[使用这个模板创建仓库](https://github.com/sankeyangshu/lemon-mobile-uniapp/generate)
 
 ### 克隆使用
 
 ```bash
 # 克隆项目
-git clone https://github.com/sankeyangshu/lemon-template-uniapp.git
+git clone https://github.com/sankeyangshu/lemon-mobile-uniapp.git
 
 # 进入项目目录
-cd lemon-template-uniapp
+cd lemon-mobile-uniapp
 
 # 安装依赖 - 推荐使用pnpm
 pnpm install
@@ -147,7 +147,7 @@ pnpm build
 
 ## 社区
 
-您可以使用 [issue](https://github.com/sankeyangshu/lemon-template-uniapp/issues) 来反馈问题，或者提交一个 Pull Request。
+您可以使用 [issue](https://github.com/sankeyangshu/lemon-mobile-uniapp/issues) 来反馈问题，或者提交一个 Pull Request。
 
 ## 平台兼容性
 

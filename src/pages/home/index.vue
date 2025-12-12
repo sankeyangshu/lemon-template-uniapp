@@ -12,7 +12,7 @@
             dark:text-white
           "
         >
-          Lemon-Template-UniApp
+          Lemon-Mobile-UniApp
         </view>
         <wd-icon
           name="github-filled" size="22px" class="
@@ -76,7 +76,7 @@ const contentList = computed(() => [
 
 function onClickOpenGithub() {
   uni.setClipboardData({
-    data: 'https://github.com/sankeyangshu/lemon-template-uniapp',
+    data: 'https://github.com/sankeyangshu/lemon-mobile-uniapp',
     success: () => {
       uni.showToast({
         title: '链接已复制',
