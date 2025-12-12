@@ -77,6 +77,8 @@ definePage({
 const userStore = useUserStore();
 const { isLogin, userInfo } = storeToRefs(userStore);
 
+const { t } = useI18n();
+
 function onClickLogin() {
   uni.navigateTo({
     url: '/pages/auth/login',
@@ -88,7 +90,7 @@ function onClickOpenDocs() {
     data: 'https://sankeyangshu.github.io/lemon-template-docs/uniapp/',
     success: () => {
       uni.showToast({
-        title: '链接已复制到剪贴板',
+        title: t('mine.linkCopied'),
         icon: 'none',
       });
     },
@@ -96,13 +98,12 @@ function onClickOpenDocs() {
 }
 
 const message = useMessage();
-const { t } = useI18n();
 
 function onClickLogout() {
   message
     .confirm({
       msg: t('mine.logoutTips'),
-      title: t('mine.tips'),
+      title: t('settings.tips'),
     })
     .then(() => {
       userStore.logout();

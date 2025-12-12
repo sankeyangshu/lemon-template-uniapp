@@ -6,7 +6,6 @@ import UniComponents from '@uni-helper/vite-plugin-uni-components';
 import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers';
 import UniLayouts from '@uni-helper/vite-plugin-uni-layouts';
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest';
-import UniMiddleware from '@uni-helper/vite-plugin-uni-middleware';
 import UniPages from '@uni-helper/vite-plugin-uni-pages';
 import UniPlatform from '@uni-helper/vite-plugin-uni-platform';
 import UniPlatformModifier from '@uni-helper/vite-plugin-uni-platform-modifier';
@@ -32,8 +31,6 @@ export function createVitePlugins() {
     UniPlatform(),
     // https://uni-helper.js.org/vite-plugin-uni-platform-modifier
     UniPlatformModifier(),
-    // https://uni-helper.js.org/vite-plugin-uni-middleware
-    UniMiddleware(),
     // https://github.com/uni-ku/root
     UniRoot({ excludePages: ['**/components/**/*.*'] }),
     // https://uni-helper.js.org/vite-plugin-uni-components

@@ -59,6 +59,9 @@ importers:
       '@uni-helper/uni-network':
         specifier: ^0.23.0
         version: 0.23.0(vue@3.4.21(typescript@5.9.3))
+      '@weapp-tailwindcss/merge':
+        specifier: ^2.1.2
+        version: 2.1.2
       pinia:
         specifier: 2.2.4
         version: 2.2.4(typescript@5.9.3)(vue@3.4.21(typescript@5.9.3))
@@ -71,9 +74,6 @@ importers:
       vue-i18n:
         specifier: 9.6.2
         version: 9.6.2(vue@3.4.21(typescript@5.9.3))
-      vue-router:
-        specifier: 4.5.1
-        version: 4.5.1(vue@3.4.21(typescript@5.9.3))
       wot-design-uni:
         specifier: ^1.13.0
         version: 1.13.0(vue@3.4.21(typescript@5.9.3))
@@ -135,9 +135,6 @@ importers:
       '@uni-helper/vite-plugin-uni-manifest':
         specifier: ^0.2.10
         version: 0.2.11(vite@5.2.8(@types/node@24.10.1)(lightningcss@1.30.2)(sass@1.64.2)(terser@5.44.1))
-      '@uni-helper/vite-plugin-uni-middleware':
-        specifier: ^0.0.1
-        version: 0.0.1(vue@3.4.21(typescript@5.9.3))
       '@uni-helper/vite-plugin-uni-pages':
         specifier: ^0.3.22
         version: 0.3.22(vite@5.2.8(@types/node@24.10.1)(lightningcss@1.30.2)(sass@1.64.2)(terser@5.44.1))
@@ -2393,11 +2390,6 @@ packages:
     peerDependencies:
       vite: ^4.0.0 || ^5.0.0 || ^6.0.0
 
-  '@uni-helper/vite-plugin-uni-middleware@0.0.1':
-    resolution: {integrity: sha512-+fda9qTeIL3vrtRYOrAZanpoGXpb9l/1eP68eyyutcbk6hPlIhVsjIpDlHYPC/9zZRT56tTSaLB7wqM5EBgRXA==}
-    peerDependencies:
-      vue: '>=3.0.0'
-
   '@uni-helper/vite-plugin-uni-pages@0.3.22':
     resolution: {integrity: sha512-VidtQMk2DK7zcKmfdsq8zBmgvAywLVxXbkdZmYvqMCYgHYhOpCIjZPfNq01twz3nZ/CV2dm4vetYKdWq1jq7BA==}
     peerDependencies:
@@ -2552,6 +2544,9 @@ packages:
   '@weapp-tailwindcss/logger@1.1.0':
     resolution: {integrity: sha512-zBkMZG19rIa2slcGIplJFzwiFSvdt+3YIjaCMeU8ePNHPDbVb9f/s4ZMHRXfIOL3OI+1bb01j6dYxef5VdWbkg==}
 
+  '@weapp-tailwindcss/merge@2.1.2':
+    resolution: {integrity: sha512-A/rvjRrWe1FxX/MbPK/4O62psb0kYddNvtBVwBfREGip0BvGzgvhFq1fqr5aA0ZyeHksunHsuFWEsllc9ZpZhw==}
+
   '@weapp-tailwindcss/postcss-calc@1.0.0':
     resolution: {integrity: sha512-dPqVfhVsj48ii0AGhkIDh9ox1KusYx4UBGe82TNxUJYc3uIJXziOZt2RWw0VeYB29+GmHOb5WwJX2dVLNoab6A==}
     engines: {node: ^18.12 || ^20.9 || >=22.0}
@@ -2560,6 +2555,9 @@ packages:
 
   '@weapp-tailwindcss/postcss@2.0.4':
     resolution: {integrity: sha512-MpyVrEfRdYaseYlYwvrixYKbMwos3eHfcHmmLV1sx+DDNgbRgboWCdMpX4Yji1S8wtUHwsjsD6RKq0l//T4FwA==}
+
+  '@weapp-tailwindcss/runtime@0.1.2':
+    resolution: {integrity: sha512-37wuyI/QV0XieeEKE1bB5iz6jWZrM7FB1W99GgemXaKtmevfS0fmT8imJCrRGBKPak9853em1E3rYpaL2TxUdA==}
 
   '@weapp-tailwindcss/shared@1.1.1':
     resolution: {integrity: sha512-xgh5n9gLJ5AWC5rr65aCSt+TvIL7DC3TLm8bo7/2i4hPgLOCJYYxu3RQQYz7LBIVhmM8YoohT8r9EAF5fnOzTw==}
@@ -2950,6 +2948,10 @@ packages:
   cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   co@4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
@@ -5736,6 +5738,9 @@ packages:
     resolution: {integrity: sha512-FzD187HuFIZEyeR7Xy6sJbJll2d4SybS90satC8SKIuaNRC05CxMvdzN7BUsfDQffcnabckRM5OIcfArjsZ0mg==}
     engines: {node: '>=18.18'}
 
+  tailwind-merge@3.4.0:
+    resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
+
   tailwindcss-config@1.1.3:
     resolution: {integrity: sha512-7AN01Cwz2vd/vl6nKwoR0y/KlgpbKBREp1Q+MHJw8QF53AueVRFgU2Cqq0yhIQ4nC2wGvEJtlBCTeKYPX3TCXQ==}
 
@@ -6058,11 +6063,6 @@ packages:
 
   vue-router@4.4.4:
     resolution: {integrity: sha512-3MlnDqwRwZwCQVbtVfpsU+nrNymNjnXSsQtXName5925NVC1+326VVfYH9vSrA0N13teGEo8z5x7gbRnGjCDiQ==}
-    peerDependencies:
-      vue: ^3.2.0
-
-  vue-router@4.5.1:
-    resolution: {integrity: sha512-ogAF3P97NPm8fJsE4by9dwSYtDwXIY1nFY9T6DyQnGHd1E2Da94w9JIolpe42LJGIl0DwOHBi8TcRPlPGwbTtw==}
     peerDependencies:
       vue: ^3.2.0
 
@@ -9366,13 +9366,6 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@uni-helper/vite-plugin-uni-middleware@0.0.1(vue@3.4.21(typescript@5.9.3))':
-    dependencies:
-      fast-glob: 3.3.3
-      jsonc-parser: 3.3.1
-      scule: 1.3.0
-      vue: 3.4.21(typescript@5.9.3)
-
   '@uni-helper/vite-plugin-uni-pages@0.3.22(vite@5.2.8(@types/node@24.10.1)(lightningcss@1.30.2)(sass@1.64.2)(terser@5.44.1))':
     dependencies:
       '@babel/generator': 7.28.5
@@ -9614,6 +9607,12 @@ snapshots:
       consola: 3.4.2
       picocolors: 1.1.1
 
+  '@weapp-tailwindcss/merge@2.1.2':
+    dependencies:
+      '@weapp-core/escape': 5.0.1
+      '@weapp-tailwindcss/runtime': 0.1.2
+      tailwind-merge: 3.4.0
+
   '@weapp-tailwindcss/postcss-calc@1.0.0(postcss@8.5.6)':
     dependencies:
       postcss: 8.5.6
@@ -9631,6 +9630,11 @@ snapshots:
       postcss-rem-to-responsive-pixel: 6.1.0
       postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
+
+  '@weapp-tailwindcss/runtime@0.1.2':
+    dependencies:
+      '@weapp-core/escape': 5.0.1
+      clsx: 2.1.1
 
   '@weapp-tailwindcss/shared@1.1.1':
     dependencies:
@@ -10075,6 +10079,8 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+
+  clsx@2.1.1: {}
 
   co@4.6.0: {}
 
@@ -13278,6 +13284,8 @@ snapshots:
 
   tailwind-csstree@0.1.4: {}
 
+  tailwind-merge@3.4.0: {}
+
   tailwindcss-config@1.1.3:
     dependencies:
       '@weapp-tailwindcss/shared': 1.1.1
@@ -13599,11 +13607,6 @@ snapshots:
       vue: 3.4.21(typescript@5.9.3)
 
   vue-router@4.4.4(vue@3.4.21(typescript@5.9.3)):
-    dependencies:
-      '@vue/devtools-api': 6.6.4
-      vue: 3.4.21(typescript@5.9.3)
-
-  vue-router@4.5.1(vue@3.4.21(typescript@5.9.3)):
     dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.4.21(typescript@5.9.3)
