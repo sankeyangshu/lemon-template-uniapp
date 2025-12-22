@@ -58,6 +58,7 @@
 提前了解和学习这些知识会对使用本项目有很大的帮助。
 
 - [Vue3](https://v3.vuejs.org/) - 熟悉 `Vue3` 基础语法
+- [UniApp](https://uniapp.dcloud.net.cn/) - 熟悉 `UniApp` 基本使用
 - [Vite](https://cn.vitejs.dev/) - 熟悉 `Vite` 特性
 - [Pinia](https://pinia.vuejs.org/) - 熟悉 `Pinia` 特性
 - [TypeScript](https://www.typescriptlang.org/) - 熟悉 `TypeScript` 基本语法

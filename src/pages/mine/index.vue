@@ -87,7 +87,7 @@ function onClickLogin() {
 
 function onClickOpenDocs() {
   uni.setClipboardData({
-    data: 'https://sankeyangshu.github.io/lemon-template-docs/uniapp/',
+    data: 'https://lemon-template-docs.vercel.app/mobile-uniapp/',
     success: () => {
       uni.showToast({
         title: t('mine.linkCopied'),
