@@ -6,13 +6,13 @@
   >
     <view
       class="
-        text-center text-lg font-bold text-black
+        text-center text-lg font-bold
         dark:text-white
       "
     >
       {{ title }}
     </view>
-    <view class="my-4 w-full text-sm text-text">
+    <view class="my-4 w-full text-sm">
       {{ preDesc }}<text class="text-primary" @click.stop="handleOpenPrivacyContract">
         {{ privacyContractNameCustom || privacyContractName }}
       </text>{{ subDesc }}

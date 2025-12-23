@@ -21,7 +21,7 @@
           "
         />
       </view>
-      <view class="mt-3 mb-1.5 text-sm leading-6 text-text">
+      <view class="mt-3 mb-1.5 text-sm leading-6">
         {{ $t('home.info') }}
       </view>
     </view>
@@ -30,9 +30,7 @@
       <view
         v-for="item in contentList"
         :key="item"
-        class="
-          box-border w-full truncate rounded-xl border border-solid border-[#424242] p-3 text-text
-        "
+        class="box-border w-full truncate rounded-xl border border-solid border-[#424242] p-3"
       >
         {{ item }}
       </view>

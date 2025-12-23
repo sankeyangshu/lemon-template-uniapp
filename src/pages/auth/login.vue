@@ -1,5 +1,5 @@
 <template>
-  <view class="box-border flex size-full flex-col items-center px-5 text-text">
+  <view class="box-border flex size-full flex-col items-center px-5">
     <view class="mt-5 mb-7.5">
       <wd-img :width="100" :height="100" src="/static/images/logo.png" />
     </view>

@@ -1,5 +1,5 @@
 <template>
-  <view class="box-border p-5 text-text">
+  <view class="box-border p-5">
     <wd-divider>{{ $t('settings.themeMode') }}</wd-divider>
     <wd-cell-group border>
       <wd-cell :title="`🌓 ${$t('example.darkMode')}`">

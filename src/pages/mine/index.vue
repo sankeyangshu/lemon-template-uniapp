@@ -1,5 +1,5 @@
 <template>
-  <view class="size-full text-text">
+  <view class="size-full">
     <wd-img
       width="100%"
       mode="widthFix"
