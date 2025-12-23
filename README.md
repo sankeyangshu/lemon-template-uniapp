@@ -17,6 +17,8 @@
   <img src="https://img.shields.io/github/issues-closed/sankeyangshu/lemon-mobile-uniapp" alt="issues" />
 </p>
 
+[文档](https://lemon-template-docs.vercel.app/mobile-uniapp/) / [反馈](https://github.com/sankeyangshu/lemon-mobile-uniapp/issues)
+
 </div>
 
 ---
