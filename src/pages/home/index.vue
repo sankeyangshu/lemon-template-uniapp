@@ -15,7 +15,9 @@
           Lemon-Mobile-UniApp
         </view>
         <wd-icon
-          name="github-filled" size="22px" class="
+          name="github-filled"
+          size="22px"
+          class="
             text-black
             dark:text-white
           "

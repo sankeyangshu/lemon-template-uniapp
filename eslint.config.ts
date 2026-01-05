@@ -21,7 +21,20 @@ export default uniHelper(
     rules: {
       'style/arrow-parens': ['error', 'always'], // 箭头函数参数始终添加括号
       'style/brace-style': ['error', '1tbs', { allowSingleLine: true }], // 括号样式
+    },
+  },
+  {
+    files: ['**/*.vue'],
+    rules: {
       'vue/block-order': ['error', { order: ['template', 'script', 'style'] }],
+      'vue/no-empty-component-block': 'error',
+      'vue/max-attributes-per-line': [
+        'error',
+        {
+          singleline: 3,
+          multiline: 1,
+        },
+      ],
     },
   },
   {

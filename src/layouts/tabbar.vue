@@ -12,7 +12,8 @@
     @change="onChangeTabbar"
   >
     <wd-tabbar-item
-      v-for="item in tabbarList" :key="item.name"
+      v-for="item in tabbarList"
+      :key="item.name"
       :name="item.name"
       :title="item.title"
       :value="getTabbarItemValue(item.name)"

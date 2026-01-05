@@ -22,7 +22,12 @@
           :style="{ 'background-color': item }"
           @click="settingStore.setThemeColor(item)"
         >
-          <wd-icon v-if="item === themeColor" name="check" size="20" color="#fff" />
+          <wd-icon
+            v-if="item === themeColor"
+            name="check"
+            size="20"
+            color="#fff"
+          />
         </view>
       </view>
     </view>

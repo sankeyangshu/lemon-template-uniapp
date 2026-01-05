@@ -43,5 +43,3 @@ const languageColumns = [
   { label: 'English', value: 'en-US' },
 ];
 </script>
-
-<style scoped></style>

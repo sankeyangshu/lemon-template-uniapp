@@ -43,7 +43,14 @@
         />
       </view>
 
-      <wd-button type="primary" size="large" round block :loading="loading" @click="onSubmit">
+      <wd-button
+        type="primary"
+        size="large"
+        round
+        block
+        :loading="loading"
+        @click="onSubmit"
+      >
         {{ $t('login.login') }}
       </wd-button>
     </wd-form>

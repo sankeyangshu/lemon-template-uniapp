@@ -45,7 +45,12 @@
             <view class="mr-2.5 i-mdi-book-open-variant text-xl" />
           </template>
         </wd-cell>
-        <wd-cell v-if="isLogin" :title="$t('mine.logout')" is-link @click="onClickLogout">
+        <wd-cell
+          v-if="isLogin"
+          :title="$t('mine.logout')"
+          is-link
+          @click="onClickLogout"
+        >
           <template #icon>
             <view class="mr-2.5 i-mdi-logout text-xl" />
           </template>

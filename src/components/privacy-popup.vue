@@ -1,8 +1,11 @@
 <template>
   <wd-popup
-    v-model="showPrivacy" :close-on-click-modal="false" custom-class="
+    v-model="showPrivacy"
+    :close-on-click-modal="false"
+    custom-class="
       box-border w-75 overflow-hidden
-    " custom-style="border-radius:32rpx;padding:32rpx;"
+    "
+    custom-style="border-radius:32rpx;padding:32rpx;"
   >
     <view
       class="
@@ -21,7 +24,12 @@
       <wd-button button-id="disagree-btn" type="info" @click="handleRefuse">
         {{ disagreeBtnText }}
       </wd-button>
-      <wd-button button-id="agree-btn" type="primary" open-type="agreePrivacyAuthorization" @agreeprivacyauthorization="handleAgree">
+      <wd-button
+        button-id="agree-btn"
+        type="primary"
+        open-type="agreePrivacyAuthorization"
+        @agreeprivacyauthorization="handleAgree"
+      >
         {{ agreeBtnText }}
       </wd-button>
     </view>
