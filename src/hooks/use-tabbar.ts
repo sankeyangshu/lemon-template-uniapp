@@ -2,7 +2,8 @@ import { computed, ref } from 'vue';
 import { i18n } from '@/locale';
 
 export interface TabbarItem {
-  name: string;
+  path: string;
+  i18nKey: string;
   value?: number;
   active: boolean;
   title: string;
@@ -13,19 +14,22 @@ const tabbarItems = ref<TabbarItem[]>([
   {
     icon: 'home',
     title: '首页',
-    name: 'home',
+    i18nKey: 'home',
+    path: '/pages/home/index',
     active: true,
   },
   {
     icon: 'a-controlplatform',
     title: '示例',
-    name: 'example',
+    i18nKey: 'example',
+    path: '/pages/example/index',
     active: false,
   },
   {
     icon: 'user',
     title: '我的',
-    name: 'mine',
+    i18nKey: 'mine',
+    path: '/pages/mine/index',
     active: false,
   },
 ]);
@@ -37,7 +41,7 @@ export function useTabbar() {
   const tabbarList = computed(() => {
     return tabbarItems.value.map((item) => ({
       ...item,
-      title: i18n.global.t(`route.${item.name}`),
+      title: i18n.global.t(`route.${item.i18nKey}`),
     }));
   });
 
@@ -51,37 +55,33 @@ export function useTabbar() {
 
   /**
    * 获取tabbar item.value
-   * @param name 唯一标识符
+   * @param path 路径标识符
    * @returns
    */
-  const getTabbarItemValue = (name: string) => {
-    const tabbarItem = tabbarItems.value.find((item) => item.name === name);
+  const getTabbarItemValue = (path: string) => {
+    const tabbarItem = tabbarItems.value.find((item) => item.path === path);
     return tabbarItem && tabbarItem.value ? tabbarItem.value : null;
   };
 
   /**
    * 设置tabbar item
-   * @param name 唯一标识符
+   * @param path 路径标识符
    * @param value 值
    */
-  const setTabbarItem = (name: string, value: number) => {
-    const tabbarItem = tabbarItems.value.find((item) => item.name === name);
+  const setTabbarItem = (path: string, value: number) => {
+    const tabbarItem = tabbarItems.value.find((item) => item.path === path);
     if (tabbarItem) {
       tabbarItem.value = value;
     }
   };
 
   /**
-   * 设置tabbar item 激活状态
-   * @param name 唯一标识符
+   * 根据路径设置 tabbar 激活状态
+   * @param path 页面路径
    */
-  const setTabbarItemActive = (name: string) => {
+  const setTabbarActiveByPath = (path: string) => {
     tabbarItems.value.forEach((item) => {
-      if (item.name === name) {
-        item.active = true;
-      } else {
-        item.active = false;
-      }
+      item.active = item.path === path;
     });
   };
 
@@ -90,6 +90,6 @@ export function useTabbar() {
     activeTabbar,
     getTabbarItemValue,
     setTabbarItem,
-    setTabbarItemActive,
+    setTabbarActiveByPath,
   };
 }

@@ -4,7 +4,7 @@
 
   <!-- 底部导航栏 -->
   <wd-tabbar
-    :model-value="activeTabbar.name"
+    :model-value="activeTabbar.path"
     fixed
     :bordered="false"
     safe-area-inset-bottom
@@ -13,18 +13,18 @@
   >
     <wd-tabbar-item
       v-for="item in tabbarList"
-      :key="item.name"
-      :name="item.name"
+      :key="item.path"
+      :name="item.path"
       :title="item.title"
-      :value="getTabbarItemValue(item.name)"
+      :value="getTabbarItemValue(item.path)"
       :icon="item.icon"
     />
   </wd-tabbar>
 </template>
 
 <script lang="ts" setup>
-import { useRoute, useRouter } from 'uni-mini-router';
-import { nextTick, onMounted } from 'vue';
+import { useRoute } from '@wot-ui/router';
+import { watch } from 'vue';
 import { useTabbar } from '@/hooks/use-tabbar';
 
 defineOptions({
@@ -33,21 +33,27 @@ defineOptions({
   styleIsolation: 'shared',
 });
 
-const router = useRouter();
+const { tabbarList, activeTabbar, getTabbarItemValue, setTabbarActiveByPath } = useTabbar();
+
 const route = useRoute();
 
-const { tabbarList, activeTabbar, getTabbarItemValue, setTabbarItemActive } = useTabbar();
-
-onMounted(() => {
-  nextTick(() => {
-    if (route.name && route.name !== activeTabbar.value.name) {
-      setTabbarItemActive(route.name);
+// 监听路由变化，自动更新 tabbar 激活状态
+watch(
+  () => route.path,
+  (newPath) => {
+    if (newPath && newPath !== activeTabbar.value.path) {
+      setTabbarActiveByPath(newPath);
     }
-  });
-});
+  },
+  { immediate: true },
+);
 
+/**
+ * 切换 tabbar
+ */
 function onChangeTabbar({ value }: { value: string }) {
-  setTabbarItemActive(value);
-  router.pushTab({ name: value });
+  uni.switchTab({
+    url: value,
+  });
 }
 </script>

@@ -1,23 +1,26 @@
 import type { App } from 'vue';
-import { createRouter } from 'uni-mini-router';
+import { createRouter } from '@wot-ui/router';
 import { pages, subPackages } from 'virtual:uni-pages';
-import { createRouterGuard } from './guards';
+import { routeGuard } from './guards';
 
 /**
  * 生成路由表
  */
-function generateRoutes() {
-  const routes = pages.map((page) => {
-    const newPath = `/${page.path}`;
-    return { ...page, path: newPath };
-  });
+export function generateRoutes() {
+  // 主包路由
+  const routes = pages.map((page) => ({
+    ...page,
+    path: `/${page.path}`,
+  }));
 
+  // 分包路由
   if (subPackages && subPackages.length > 0) {
     subPackages.forEach((subPackage) => {
-      const subRoutes = subPackage.pages.map((page: any) => {
-        const newPath = `/${subPackage.root}/${page.path}`;
-        return { ...page, path: newPath };
-      });
+      const subRoutes = subPackage.pages.map((page: any) => ({
+        ...page,
+        path: `/${subPackage.root}/${page.path}`,
+      }));
+
       routes.push(...subRoutes);
     });
   }
@@ -38,7 +41,7 @@ const router = createRouter({
  */
 export function setupRouter(app: App<Element>) {
   app.use(router);
-  createRouterGuard(router);
+  app.use(routeGuard);
 }
 
 export { router };
