@@ -8,7 +8,6 @@ import UniLayouts from '@uni-helper/vite-plugin-uni-layouts';
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest';
 import UniPages from '@uni-helper/vite-plugin-uni-pages';
 import UniPlatform from '@uni-helper/vite-plugin-uni-platform';
-import UniPlatformModifier from '@uni-helper/vite-plugin-uni-platform-modifier';
 import UniRoot from '@uni-ku/root';
 import ViteRestart from 'vite-plugin-restart';
 import { UnifiedViteWeappTailwindcssPlugin } from 'weapp-tailwindcss/vite';
@@ -29,8 +28,6 @@ export function createVitePlugins() {
     UniManifest(),
     // https://uni-helper.js.org/vite-plugin-uni-platform
     UniPlatform(),
-    // https://uni-helper.js.org/vite-plugin-uni-platform-modifier
-    UniPlatformModifier(),
     // https://github.com/uni-ku/root
     UniRoot({ excludePages: ['**/components/**/*.*'] }),
     // https://uni-helper.js.org/vite-plugin-uni-components
