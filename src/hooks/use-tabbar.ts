@@ -56,7 +56,6 @@ export function useTabbar() {
   /**
    * 获取tabbar item.value
    * @param path 路径标识符
-   * @returns
    */
   const getTabbarItemValue = (path: string) => {
     const tabbarItem = tabbarItems.value.find((item) => item.path === path);

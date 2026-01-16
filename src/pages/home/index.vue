@@ -23,7 +23,7 @@
           "
         />
       </view>
-      <view class="mt-3 mb-1.5 text-sm leading-6">
+      <view class="mt-3 mb-1.5 text-sm/6">
         {{ $t('home.info') }}
       </view>
     </view>
