@@ -1,5 +1,7 @@
 import process from 'node:process';
 
+const NEWLINE_RE = /\\n/g;
+
 /**
  * 读取并处理所有环境变量配置文件到 process.env
  * @param envConf - 需要处理的环境变量配置
@@ -15,7 +17,7 @@ export function wrapperEnv(envConf: Record<string, string>): Env.ImportMeta {
     }
 
     // 去除空格并处理换行
-    let realName: string | number | boolean | [string, string][] = envValue.replace(/\\n/g, '\n');
+    let realName: string | number | boolean | [string, string][] = envValue.replace(NEWLINE_RE, '\n');
 
     // 转换布尔值
     if (realName === 'true') {
